@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — SignalBytes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0C0B09;
+    --off-white: #F6F3ED;
+    --accent: #D94F2B;
+    --mid: #6B6560;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Crimson Pro', serif;
+    background: var(--black);
+    color: var(--off-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+  }
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--off-white);
+    text-decoration: none;
+    margin-bottom: 60px;
+  }
+  .logo span { color: var(--accent); }
+  .code {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 120px;
+    letter-spacing: 8px;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  p {
+    font-size: 18px;
+    color: var(--mid);
+    max-width: 400px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  a.btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    background: var(--accent);
+    color: var(--off-white);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  a.btn:hover { opacity: 0.85; }
+</style>
+</head>
+<body>
+  <a href="/" class="logo">SIGNAL<span>.</span>BYTES</a>
+  <div class="code">404</div>
+  <h1>Page Not Found</h1>
+  <p>The page you're looking for doesn't exist or may have moved.</p>
+  <a href="/" class="btn">Back to Home →</a>
+</body>
+</html>

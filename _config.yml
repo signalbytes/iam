@@ -1,0 +1,10 @@
+# SignalBytes — GitHub Pages config
+title: SignalBytes
+description: Technology, decoded in small bites
+url: "https://signalbytes.in"
+baseurl: ""
+
+# Tell GitHub Pages not to use Jekyll processing on HTML files
+include:
+  - index.html
+  - 404.html
