@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | SignalBytes</title>
-    <meta name="description" content="Terms of Service and liability protections for SignalBytes technical tutorials.">
+    <title>The Executive’s Guide to Google Gemini's Personal Intelligence in India | SignalBytes</title>
+    <meta name="description" content="A practical guide for executives in India to integrate Google Gemini into Gmail and Google Docs for maximum productivity.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -66,24 +66,44 @@
             margin: 0 auto;
             min-height: 60vh;
         }
-        .page-title {
+        .article-content h1 {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--text-color);
+            line-height: 1.2;
         }
-        .content-section {
-            margin-bottom: 2rem;
-        }
-        .content-section h2 {
-            font-size: 1.5rem;
-            margin-top: 2rem;
+        .article-content h2 {
+            font-size: 1.75rem;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
             color: var(--accent-color);
         }
-        .content-section p {
+        .article-content p {
             margin-bottom: 1.25rem;
             font-size: 1.1rem;
-            color: #444;
+            color: #333;
+        }
+        .article-content ul {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        pre {
+            background-color: #1A1A1A;
+            color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-top: 2rem;
+            border: 1px solid #333;
+        }
+        code {
+            font-family: monospace;
+            font-size: 0.95rem;
         }
         footer {
             text-align: center;
@@ -105,7 +125,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .page-title {
+            .article-content h1 {
                 font-size: 2rem;
             }
         }
@@ -127,15 +147,35 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h1 class="page-title">Terms of Service</h1>
-        <div class="content-section">
-            <h2>Liability Protections & Disclaimer</h2>
-            <p>The technical tutorials, guides, checklists, and all other content provided on SignalBytes are for educational and informational purposes only. While we strive to ensure the accuracy, reliability, and timeliness of our content, SignalBytes and its authors assume no responsibility or liability for any errors, omissions, or damages resulting from the use of this information.</p>
-            
-            <h2>Assumption of Risk</h2>
-            <p>Users implement any technical advice, cybersecurity practices, scripts, or smart home automation configurations at their own risk. Technology environments vary greatly, and what works in a human-tested scenario may behave differently in your specific setup. We strongly recommend backing up your data, reviewing all code, and consulting with certified professionals before making significant changes to your IT infrastructure, networks, or security systems.</p>
-        </div>
+    <div class="container article-content">
+        <h1>The Executive’s Guide to Google Gemini's Personal Intelligence in India</h1>
+        
+        <p>I’ve spent the last three months integrating Google Gemini into my daily workflow here in India. It’s not just another chatbot; it’s a deeply integrated personal intelligence layer.</p>
+        
+        <p>Most executives are barely scratching the surface. They use it like a search engine. The real power lies in how it connects to your existing Google Workspace—specifically Gmail and Google Docs.</p>
+
+        <h2>Context is Everything</h2>
+        <p>Gemini’s biggest advantage over standalone AI tools is context. It can read your emails, summarize long threads, and draft replies based on the specific tone of your previous correspondence.</p>
+        
+        <p>When I’m dealing with a 40-email chain about a vendor contract, I don’t read it. I ask Gemini to extract the key sticking points and draft a response addressing them.</p>
+
+        <h2>Docs Integration for Rapid Drafting</h2>
+        <p>Staring at a blank page is a waste of executive time. I use Gemini in Google Docs to generate the first draft of project proposals, meeting agendas, and strategy documents.</p>
+        
+        <ul>
+            <li><strong>Brainstorming:</strong> Generate 10 angles for a new product launch.</li>
+            <li><strong>Structuring:</strong> Create an outline for a Q3 review presentation.</li>
+            <li><strong>Refining:</strong> Rewrite a technical paragraph so a non-technical stakeholder understands it.</li>
+        </ul>
+
+        <h2>The "Context-Heavy" Prompt Template</h2>
+        <p>To get the best results, you need to provide Gemini with a specific role, context, and desired output format. Here is the exact prompt structure I use for drafting important emails.</p>
+
+<pre><code>[Role] Act as a senior executive communicating with a key stakeholder.
+[Context] Review the recent email thread regarding the Q3 budget constraints.
+[Task] Draft a concise, professional reply that acknowledges their concerns but firmly maintains our current budget limits.
+[Format] Keep it under 150 words. Use bullet points for the main arguments.</code></pre>
+
     </div>
 
     <footer>

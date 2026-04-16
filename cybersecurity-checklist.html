@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | SignalBytes</title>
-    <meta name="description" content="Terms of Service and liability protections for SignalBytes technical tutorials.">
+    <title>The 5-Step Cybersecurity Checklist for Small Businesses in 2026 | SignalBytes</title>
+    <meta name="description" content="A practical, non-technical cybersecurity checklist for small businesses focusing on 2FA and password managers.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -66,24 +66,44 @@
             margin: 0 auto;
             min-height: 60vh;
         }
-        .page-title {
+        .article-content h1 {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--text-color);
+            line-height: 1.2;
         }
-        .content-section {
-            margin-bottom: 2rem;
-        }
-        .content-section h2 {
-            font-size: 1.5rem;
-            margin-top: 2rem;
+        .article-content h2 {
+            font-size: 1.75rem;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
             color: var(--accent-color);
         }
-        .content-section p {
+        .article-content p {
             margin-bottom: 1.25rem;
             font-size: 1.1rem;
-            color: #444;
+            color: #333;
+        }
+        .article-content ul {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        pre {
+            background-color: #1A1A1A;
+            color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-top: 2rem;
+            border: 1px solid #333;
+        }
+        code {
+            font-family: monospace;
+            font-size: 0.95rem;
         }
         footer {
             text-align: center;
@@ -105,7 +125,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .page-title {
+            .article-content h1 {
                 font-size: 2rem;
             }
         }
@@ -127,15 +147,36 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h1 class="page-title">Terms of Service</h1>
-        <div class="content-section">
-            <h2>Liability Protections & Disclaimer</h2>
-            <p>The technical tutorials, guides, checklists, and all other content provided on SignalBytes are for educational and informational purposes only. While we strive to ensure the accuracy, reliability, and timeliness of our content, SignalBytes and its authors assume no responsibility or liability for any errors, omissions, or damages resulting from the use of this information.</p>
-            
-            <h2>Assumption of Risk</h2>
-            <p>Users implement any technical advice, cybersecurity practices, scripts, or smart home automation configurations at their own risk. Technology environments vary greatly, and what works in a human-tested scenario may behave differently in your specific setup. We strongly recommend backing up your data, reviewing all code, and consulting with certified professionals before making significant changes to your IT infrastructure, networks, or security systems.</p>
-        </div>
+    <div class="container article-content">
+        <h1>The 5-Step Cybersecurity Checklist for Small Businesses in 2026</h1>
+        
+        <p>I get asked the same question by small business owners every week: "Do I need to hire an expensive IT firm to secure my data?"</p>
+        
+        <p>The answer is usually no. Most small businesses aren't targeted by sophisticated nation-state hackers. They are hit by automated scripts looking for easy targets. You don't need complex code to stop them; you just need basic hygiene.</p>
+
+        <h2>The Password Problem</h2>
+        <p>If you are reusing the same password across your email, banking, and CRM software, you are a sitting duck. A breach on a random forum you signed up for five years ago can compromise your entire business.</p>
+        
+        <p>The solution isn't memorizing complex strings of characters. The solution is a password manager. It generates and stores unique passwords for every site. You only need to remember one master password.</p>
+
+        <h2>Two-Factor Authentication (2FA) is Non-Negotiable</h2>
+        <p>Passwords get stolen. It's a fact of life. Two-factor authentication ensures that even if a hacker has your password, they can't log in without access to your physical phone.</p>
+        
+        <ul>
+            <li><strong>SMS 2FA:</strong> Better than nothing, but vulnerable to SIM swapping.</li>
+            <li><strong>Authenticator Apps:</strong> (Like Google Authenticator or Authy) Much more secure.</li>
+            <li><strong>Hardware Keys:</strong> (Like YubiKey) The gold standard for securing admin accounts.</li>
+        </ul>
+
+        <h2>The Actionable Checklist</h2>
+        <p>Don't get overwhelmed by enterprise security frameworks. Start with these five steps today.</p>
+
+<pre><code>[ ] 1. Install a Password Manager (1Password or Bitwarden) for all employees.
+[ ] 2. Enforce unique, 16+ character passwords for all business accounts.
+[ ] 3. Enable App-Based 2FA on Email, Banking, and CRM platforms.
+[ ] 4. Turn on automatic OS and browser updates on all work devices.
+[ ] 5. Remove admin privileges from standard employee user accounts.</code></pre>
+
     </div>
 
     <footer>
