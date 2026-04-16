@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignalBytes | AI & Tech Intelligence for Everyone</title>
+    <meta name="description" content="SignalBytes provides AI & Tech Intelligence for Everyone. Read guides on Gemini, Smart Home Automation, and Cybersecurity.">
+    <meta property="og:title" content="SignalBytes | AI & Tech Intelligence for Everyone">
+    <meta property="og:description" content="SignalBytes provides AI & Tech Intelligence for Everyone. Read guides on Gemini, Smart Home Automation, and Cybersecurity.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1A1A1A;
+            --accent-color: #7C3AED;
+            --card-bg: #f8f9fa;
+            --border-color: #e5e7eb;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent-color);
+        }
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(12, 10, 20, 0.8), rgba(124, 58, 237, 0.6)), 
+                        url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect for that premium feel */
+            color: white;
+            padding: 8rem 5%;
+            text-align: center;
+            border-radius: 1.5rem;
+            margin: 1rem 2%;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .container {
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto;
+            gap: 1.5rem;
+            grid-template-areas:
+                "card2 card2 card1 card3"
+                "card2 card2 card4 card4";
+        }
+        .bento-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--accent-color);
+        }
+        .bento-card svg {
+            width: 32px;
+            height: 32px;
+            color: var(--accent-color);
+        }
+        .bento-card h3 {
+            font-size: 1.5rem;
+        }
+        .card-1 { grid-area: card1; }
+        .card-2 { grid-area: card2; }
+        .card-3 { grid-area: card3; }
+        .card-4 { grid-area: card4; }
+        
+        .premium-card {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2d1b4e 100%);
+            color: white !important;
+            border: 1px solid #7C3AED !important;
+            position: relative;
+            overflow: hidden;
+            justify-content: center;
+        }
+        .premium-card h3 {
+            font-size: 2.5rem !important;
+            color: white !important;
+            margin-bottom: 0.5rem;
+        }
+        .premium-card p {
+            font-size: 1.1rem;
+            color: #e5e7eb !important;
+        }
+        .premium-card svg {
+            width: 48px !important;
+            height: 48px !important;
+            color: #a78bfa !important;
+            margin-bottom: 1rem;
+        }
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .premium-card:hover::before {
+            opacity: 1;
+        }
+
+        .adsense-unit {
+            display: none; /* This hides the messy box from users */
+            margin: 2rem auto;
+            text-align: center;
+            /* Keep other styles below so you don't lose them */
+            padding: 20px;
+            background: #f8f9fa;
+            border: 1px dashed #e5e7eb;
+            border-radius: 8px;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Premium Action Checklist Style */
+        .action-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-left: 6px solid #7C3AED; /* Your Electric Violet Brand Color */
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .action-card h3 {
+            margin-top: 0;
+            color: #1A1A1A;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #374151;
+            line-height: 1.4;
+        }
+
+        .checkbox-icon {
+            width: 22px;
+            height: 22px;
+            background: #f3f0ff;
+            border: 2px solid #7C3AED;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .checkbox-icon::after {
+            content: '';
+            width: 10px;
+            height: 6px;
+            border-left: 2px solid #7C3AED;
+            border-bottom: 2px solid #7C3AED;
+            transform: rotate(-45deg);
+            display: none; /* Change to 'block' if you want them pre-checked */
+        }
+
+        .action-card:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 30px -10px rgba(124, 58, 237, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            color: #666;
+        }
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "card1 card1"
+                    "card2 card3"
+                    "card4 card4";
+            }
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "card1"
+                    "card2"
+                    "card3"
+                    "card4";
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            SignalBytes
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="ai-guide.html">AI Guide</a>
+            <a href="smart-home-automation.html">Smart Home</a>
+            <a href="cybersecurity-checklist.html">Cybersecurity</a>
+            <a href="human-ai-prompts.html">AI Prompts</a>
+        </nav>
+    </header>
