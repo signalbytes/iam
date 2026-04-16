@@ -260,6 +260,38 @@
         <p>Contact us: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p>
     </footer>
 
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:90%; max-width:600px; background:#1A1A1A; color:white; padding:20px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.5); z-index:9999; font-family:'Inter',sans-serif; border:1px solid #7C3AED;">
+        <div style="margin-bottom:15px; font-size:0.9rem; line-height:1.5;">
+            <strong>SignalBytes Privacy:</strong> We use cookies to enhance your experience and serve personalized ads. By clicking "Accept All", you consent to our use of cookies in accordance with <strong>GDPR</strong> and <strong>CPRA</strong>. 
+            <a href="privacy.html" style="color:#7C3AED; text-decoration:underline;">Read Policy</a>
+        </div>
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+            <button onclick="handleConsent('denied')" style="background:transparent; border:1px solid #6b7280; color:#6b7280; padding:8px 16px; border-radius:6px; cursor:pointer;">Reject All</button>
+            <button onclick="handleConsent('granted')" style="background:#7C3AED; border:none; color:white; padding:8px 24px; border-radius:6px; font-weight:bold; cursor:pointer;">Accept All</button>
+        </div>
+    </div>
+
+    <script>
+        // Logic to show banner only if consent isn't stored
+        window.onload = function() {
+            if (!localStorage.getItem('sb_consent')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        };
+
+        function handleConsent(status) {
+            localStorage.setItem('sb_consent', status);
+            document.getElementById('cookie-banner').style.display = 'none';
+            
+            // Signal Google Consent Mode v2 (Important for AdSense)
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'ad_storage': status,
+                    'analytics_storage': status
+                });
+            }
+        }
+    </script>
 </body>
 </html>
 
