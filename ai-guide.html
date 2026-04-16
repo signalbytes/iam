@@ -3,120 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Guide | SignalBytes</title>
-    <meta name="description" content="A premium AI guide hub covering the best tools for drafting, planning, coding, presentations, image editing, video editing, and office work.">
-    <link rel="canonical" href="https://www.signalbytes.in/ai-guide.html">
-    <meta property="og:title" content="AI Guide | SignalBytes">
-    <meta property="og:description" content="A premium AI guide hub covering the best tools for drafting, planning, coding, presentations, image editing, video editing, and office work.">
-    <meta property="og:type" content="website">
+    <title>The Executive’s Guide to Google Gemini's Personal Intelligence in India | SignalBytes</title>
+    <meta name="description" content="A practical guide for executives in India to integrate Google Gemini into Gmail and Google Docs for maximum productivity.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <style>
-        :root { --bg-color:#ffffff; --text-color:#1A1A1A; --accent-color:#7C3AED; --accent-soft:#f3f0ff; --card-bg:#f8f9fa; --border-color:#e5e7eb; --muted:#6b7280; }
-        *{box-sizing:border-box;margin:0;padding:0}
-        html{scroll-behavior:smooth}
-        body{font-family:'Inter',sans-serif;background:var(--bg-color);color:var(--text-color);line-height:1.65}
-        header{padding:1.25rem 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-color);background:rgba(255,255,255,.94);backdrop-filter:blur(10px);position:sticky;top:0;z-index:50}
-        .logo{font-size:1.5rem;font-weight:800;color:var(--text-color);text-decoration:none;display:flex;align-items:center;gap:.5rem}
-        .logo svg{width:24px;height:24px;fill:var(--accent-color)}
-        nav{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:center}
-        nav a{text-decoration:none;color:var(--text-color);font-weight:500;transition:color .2s ease}
-        nav a:hover,nav a.active{color:var(--accent-color)}
-        .hero{position:relative;background:linear-gradient(135deg,rgba(12,10,20,.88) 0%,rgba(58,30,102,.88) 48%,rgba(124,58,237,.72) 100%),url('./hero-bg.png');background-size:cover;background-position:center;color:white;padding:5.5rem 5%;margin:1rem 2%;border-radius:1.5rem;overflow:hidden;box-shadow:0 25px 50px -12px rgba(0,0,0,.35)}
-        .hero .eyebrow{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:.45rem .85rem;font-size:.82rem;letter-spacing:.03em;margin-bottom:1rem}
-        .hero h1{font-size:clamp(2.4rem,5vw,4.25rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem;max-width:900px}
-        .hero p{font-size:1.12rem;max-width:780px;color:rgba(255,255,255,.92)}
-        .container{max-width:1180px;margin:0 auto;padding:2rem 5% 4rem}
-        .article-wrap{max-width:860px;margin:0 auto;padding:2.5rem 5% 4rem}
-        .article-meta{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:1.2rem;color:var(--muted);font-size:.95rem}
-        .article-badge{background:var(--accent-soft);color:var(--accent-color);border-radius:999px;padding:.35rem .75rem;font-weight:600}
-        .lede{font-size:1.18rem;color:#374151;margin-bottom:1.5rem}
-        .article-content h1{font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:1rem}
-        .article-content h2{margin-top:2.35rem;margin-bottom:.95rem;font-size:1.65rem;line-height:1.2;color:var(--accent-color)}
-        .article-content h3{margin-top:1.7rem;margin-bottom:.7rem;font-size:1.18rem}
-        .article-content p,.article-content li{font-size:1.06rem;color:#20242b}
-        .article-content p{margin-bottom:1.1rem}
-        .article-content ul,.article-content ol{padding-left:1.3rem;margin-bottom:1.2rem}
-        .article-content li{margin-bottom:.6rem}
-        .callout,.tool-card{background:#fff;border:1px solid var(--border-color);border-radius:1rem;padding:1.35rem;margin:1.5rem 0;box-shadow:0 12px 30px -22px rgba(17,24,39,.4)}
-        .callout{border-left:5px solid var(--accent-color);background:linear-gradient(180deg,#fff 0%,#faf7ff 100%)}
-        .tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
-        .tool-card h3,.tool-card h4{margin-bottom:.55rem}.tool-card p{color:#374151;font-size:.98rem}
-        .tool-card .tag{display:inline-block;margin-bottom:.65rem;padding:.32rem .65rem;border-radius:999px;background:var(--accent-soft);color:var(--accent-color);font-size:.82rem;font-weight:700}
-        .steps{counter-reset:step;list-style:none;padding-left:0}.steps li{counter-increment:step;display:grid;grid-template-columns:2.2rem 1fr;gap:.9rem;align-items:start;margin-bottom:.95rem}.steps li::before{content:counter(step);width:2.2rem;height:2.2rem;border-radius:999px;background:var(--accent-soft);color:var(--accent-color);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
-        .prompt-box,pre{background:#111827;color:#f9fafb;border-radius:1rem;padding:1.2rem;overflow-x:auto;margin:1.4rem 0;border:1px solid #312e81}
-        code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.95rem}
-        .sources{margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid var(--border-color)} .sources h2{margin-top:0}.sources a,footer a{color:var(--accent-color);text-decoration:none}
-        .bento-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem;margin-top:2rem}
-        .bento-card{background:linear-gradient(180deg,#ffffff 0%,#fbfbfd 100%);border:1px solid var(--border-color);border-radius:1.25rem;padding:1.4rem;text-decoration:none;color:var(--text-color);min-height:220px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;box-shadow:0 14px 35px -28px rgba(17,24,39,.5)}
-        .bento-card:hover{transform:translateY(-4px);border-color:#a78bfa;box-shadow:0 18px 45px -24px rgba(124,58,237,.26)}
-        .bento-card.featured{grid-column:span 6;min-height:340px;background:linear-gradient(135deg,#17121f 0%,#2a1746 55%,#5b21b6 100%);color:white;border-color:#6d28d9}
-        .bento-card.large{grid-column:span 6}.bento-card.medium{grid-column:span 3}.bento-card h3{font-size:1.45rem;line-height:1.15;letter-spacing:-.02em;margin-bottom:.75rem}.bento-card.featured h3{font-size:2.3rem}.bento-card p{color:inherit;opacity:.9}.kicker{display:inline-flex;width:fit-content;margin-bottom:.9rem;border-radius:999px;padding:.35rem .72rem;font-size:.82rem;font-weight:700;background:var(--accent-soft);color:var(--accent-color)}.featured .kicker{background:rgba(255,255,255,.12);color:#ede9fe}.card-meta{font-size:.88rem;color:var(--muted);margin-top:1rem}.featured .card-meta{color:rgba(255,255,255,.75)}
-        .section-title{font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:.8rem}.section-copy{max-width:760px;color:#4b5563;font-size:1.05rem}
-        footer{text-align:center;padding:2rem 5%;border-top:1px solid var(--border-color);margin-top:4rem;color:#666}.cookie-banner{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:90%;max-width:600px;background:#1A1A1A;color:white;padding:20px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);z-index:9999;font-family:'Inter',sans-serif;border:1px solid #7C3AED}
-        @media (max-width:1024px){.tool-grid{grid-template-columns:1fr}.bento-card.featured,.bento-card.large{grid-column:span 12}.bento-card.medium{grid-column:span 6}}
-        @media (max-width:720px){header{flex-direction:column;gap:1rem}.hero{padding:4rem 6%}.article-wrap,.container{padding-left:5%;padding-right:5%}.bento-card.medium{grid-column:span 12}}
-    </style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1A1A1A;
+            --accent-color: #7C3AED;
+            --card-bg: #f8f9fa;
+            --border-color: #e5e7eb;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent-color);
+        }
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Awwwards Style Layout */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 0 5%;
+            min-height: 60vh;
+        }
+        .article-sidebar {
+            border-top: 2px solid var(--text-color);
+            padding-top: 1rem;
+        }
+        .meta-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .meta-info .tag {
+            color: var(--accent-color);
+        }
+        .article-title {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+        .content-section p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
+        .content-section h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 900px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin: 3rem auto;
+            }
+            .article-sidebar {
+                border-top: none;
+                border-left: 2px solid var(--accent-color);
+                padding-top: 0;
+                padding-left: 1rem;
+            }
+        }
 
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            color: #666;
+        }
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .article-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <a href="index.html" class="logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        SignalBytes
-    </a>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="ai-guide.html" class="active">AI Guide</a>
-        <a href="smart-home-automation.html">Smart Home</a>
-        <a href="cybersecurity-checklist.html">Cybersecurity</a>
-        <a href="human-ai-prompts.html">AI Prompts</a>
-    </nav>
-</header>
+    <header>
+        <a href="index.html" class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            SignalBytes
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="ai-guide.html">AI Guide</a>
+            <a href="smart-home-automation.html">Smart Home</a>
+            <a href="cybersecurity-checklist.html">Cybersecurity</a>
+            <a href="human-ai-prompts.html">AI Prompts</a>
+        </nav>
+    </header>
 
+    <div class="article-layout">
+        <div class="article-sidebar">
+            <div class="meta-info">
+                <span class="tag">Premium Guide</span>
+                <span class="date">April 2026</span>
+            </div>
+        </div>
+        <div class="article-main">
+            <h1 class="article-title">The Executive’s Guide to Google Gemini's Personal Intelligence in India</h1>
+            <div class="content-section">
+                <p>This will be replaced by your Executive Gemini Guide Word Doc.</p>
+            </div>
+        </div>
+    </div>
 
-<div class="hero"><div class="eyebrow">Curated AI Playbooks</div><h1>The SignalBytes AI Guide</h1><p>A finished, editorial-style hub for practical AI adoption. These guides focus on real use cases: writing, planning, coding, slides, image work, video editing, and everyday office tasks.</p></div>
-<main class="container">
-    <h2 class="section-title">Start with the job you actually need to finish</h2>
-    <p class="section-copy">Most AI roundups are vague. This one is organized by work outcome. Each guide explains where a tool is genuinely strong, where it still needs human review, and how to get better results with clear examples.</p>
-    <div class="bento-grid">
-        <a href="ai-tools-drafting-planning-scheduling.html" class="bento-card featured"><div><span class="kicker">Flagship Guide</span><h3>Best AI for drafting, planning and scheduling</h3><p>Which assistant is best for brainstorming, structured writing, summaries, recurring reminders, and calendar-style coordination.</p></div><div class="card-meta">ChatGPT · Claude · Gemini</div></a>
-        <a href="best-ai-image-editing-tools-2026.html" class="bento-card large"><div><span class="kicker">Creative Workflow</span><h3>Best AI for image editing and photo cleanup</h3><p>Photoshop, Firefly-powered workflows, and how to use AI for removal, expansion, resize, and commercial-safe iterations.</p></div><div class="card-meta">Premium visual workflows</div></a>
-        <a href="best-ai-video-editing-tools-2026.html" class="bento-card medium"><div><span class="kicker">Top 3</span><h3>Best AI for video editing</h3><p>Three strong options for creators and teams.</p></div><div class="card-meta">Premiere · Resolve · Descript</div></a>
-        <a href="best-ai-coding-prompting-guide-2026.html" class="bento-card medium"><div><span class="kicker">Builder Mode</span><h3>Best AI for prompting and coding</h3><p>How to structure requests that lead to usable output.</p></div><div class="card-meta">With examples</div></a>
-        <a href="best-ai-powerpoint-presentation-tools-2026.html" class="bento-card medium"><div><span class="kicker">Slides</span><h3>Best AI for PowerPoint and deck creation</h3><p>Choose by corporate deck, pitch deck, or fast visual storytelling.</p></div><div class="card-meta">Copilot · Canva · Gamma</div></a>
-        <a href="best-ai-office-productivity-tools-2026.html" class="bento-card medium"><div><span class="kicker">Office Work</span><h3>Best AI for everyday office tasks</h3><p>Including how Claude Cowork can take on repetitive knowledge work.</p></div><div class="card-meta">Email · docs · follow-up</div></a>
-        <a href="best-ai-writing-assistants-2026.html" class="bento-card medium"><div><span class="kicker">Writing</span><h3>Best AI writing assistants</h3><p>How to get stronger drafts without publishing generic AI tone.</p></div><div class="card-meta">Emails · articles · memos</div></a>
-    </div>
-    <div class="callout"><h3 style="margin-bottom:.6rem;">How to use this hub</h3><p>Pick one workflow, test one article, and copy the sample process before buying or standardizing on a tool. The fastest way to waste money with AI is to start with brand hype instead of job design.</p></div>
-</main>
+    <footer>
+        <div style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p>&copy; 2026 SignalBytes. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p>
+    </footer>
 
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:90%; max-width:600px; background:#1A1A1A; color:white; padding:20px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.5); z-index:9999; font-family:'Inter',sans-serif; border:1px solid #7C3AED;">
+        <div style="margin-bottom:15px; font-size:0.9rem; line-height:1.5;">
+            <strong>SignalBytes Privacy:</strong> We use cookies to enhance your experience and serve personalized ads. By clicking "Accept All", you consent to our use of cookies in accordance with <strong>GDPR</strong> and <strong>CPRA</strong>. 
+            <a href="privacy.html" style="color:#7C3AED; text-decoration:underline;">Read Policy</a>
+        </div>
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+            <button onclick="handleConsent('denied')" style="background:transparent; border:1px solid #6b7280; color:#6b7280; padding:8px 16px; border-radius:6px; cursor:pointer;">Reject All</button>
+            <button onclick="handleConsent('granted')" style="background:#7C3AED; border:none; color:white; padding:8px 24px; border-radius:6px; font-weight:bold; cursor:pointer;">Accept All</button>
+        </div>
+    </div>
 
-<footer>
-    <div style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-    </div>
-    <p>&copy; 2026 SignalBytes. All rights reserved.</p>
-    <p>Contact us: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p>
-</footer>
-<div id="cookie-banner" class="cookie-banner">
-    <div style="margin-bottom:15px; font-size:0.9rem; line-height:1.5;">
-        <strong>SignalBytes Privacy:</strong> We use cookies to enhance your experience and serve personalized ads. By clicking "Accept All", you consent to our use of cookies in accordance with <strong>GDPR</strong> and <strong>CPRA</strong>.
-        <a href="privacy.html" style="color:#a78bfa; text-decoration:underline;">Read Policy</a>
-    </div>
-    <div style="display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;">
-        <button onclick="handleConsent('denied')" style="background:transparent; border:1px solid #6b7280; color:#d1d5db; padding:8px 16px; border-radius:6px; cursor:pointer;">Reject All</button>
-        <button onclick="handleConsent('granted')" style="background:#7C3AED; border:none; color:white; padding:8px 24px; border-radius:6px; font-weight:bold; cursor:pointer;">Accept All</button>
-    </div>
-</div>
-<script>
-window.onload=function(){if(!localStorage.getItem('sb_consent')){const b=document.getElementById('cookie-banner'); if(b) b.style.display='block';}};
-function handleConsent(status){localStorage.setItem('sb_consent',status); const b=document.getElementById('cookie-banner'); if(b) b.style.display='none'; if(typeof gtag==='function'){gtag('consent','update',{'ad_storage':status,'analytics_storage':status});}}
-</script>
+    <script>
+        window.onload = function() {
+            if (!localStorage.getItem('sb_consent')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        };
+
+        function handleConsent(status) {
+            localStorage.setItem('sb_consent', status);
+            document.getElementById('cookie-banner').style.display = 'none';
+            
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'ad_storage': status,
+                    'analytics_storage': status
+                });
+            }
+        }
+    </script>
 </body>
 </html>
