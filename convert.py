@@ -1,21 +1,64 @@
 import os
 import subprocess
-from datetime import datetime
+import re
 
-# 1. Convert Word to HTML Snippet using Pandoc
-for file in os.listdir('drafts'):
-    if file.endswith('.docx'):
-        filename = file.replace('.docx', '').lower().replace(' ', '-')
-        # Extracts images to a folder called 'images' automatically
-        subprocess.run(['pandoc', f'drafts/{file}', '--extract-media=.', '-o', f'{filename}-snippet.html'])
+DRAFTS_FOLDER = 'drafts'
 
-        # 2. Stitch the Page
-        with open('header-template.html', 'r') as h, open('footer-template.html', 'r') as f, open(f'{filename}-snippet.html', 'r') as s:
-            full_page = h.read() + "<div class='container content-section'>" + s.read() + "</div>" + f.read()
-        
-        with open(f'{filename}.html', 'w') as out:
-            out.write(full_page)
+def slugify(text):
+    """Converts 'Gemini India Guide' to 'gemini-india-guide'"""
+    text = text.lower()
+    # Remove special characters and replace spaces with hyphens
+    text = re.sub(r'[^\w\s-]', '', text)
+    return re.sub(r'[-\s]+', '-', text).strip('-')
 
-        # 3. Update Index (Add new Bento Card)
-        # (This part would use a simple string replace to add a new <a> tag to your index.html)
-        print(f"✅ Published: {filename}.html")
+def auto_detect_and_inject():
+    if not os.path.exists(DRAFTS_FOLDER):
+        print(f"❌ Folder '{DRAFTS_FOLDER}' not found.")
+        return
+
+    # 1. Loop through every file in the drafts folder
+    for filename in os.listdir(DRAFTS_FOLDER):
+        if filename.endswith('.docx'):
+            doc_title = filename.replace('.docx', '')
+            target_slug = slugify(doc_title)
+            target_html = f"{target_slug}.html"
+
+            # 2. Check if the matching HTML file exists in the root
+            if os.path.exists(target_html):
+                print(f"🚀 Found Match: '{filename}' -> {target_html}")
+                
+                # 3. Convert Word to HTML Snippet (Extracts images too!)
+                snippet_file = "temp_body.html"
+                subprocess.run([
+                    'pandoc', 
+                    os.path.join(DRAFTS_FOLDER, filename), 
+                    '--extract-media=.', 
+                    '-o', snippet_file
+                ])
+
+                with open(snippet_file, 'r', encoding='utf-8') as s:
+                    new_content = s.read()
+
+                # 4. Inject into the specific zone
+                with open(target_html, 'r', encoding='utf-8') as f:
+                    original_html = f.read()
+
+                # Look for your markers
+                pattern = r".*?"
+                replacement = f"\n{new_content}\n"
+                
+                if "" in original_html:
+                    updated_html = re.sub(pattern, replacement, original_html, flags=re.DOTALL)
+                    
+                    with open(target_html, 'w', encoding='utf-8') as f:
+                        f.write(updated_html)
+                    print(f"✅ Injected content into {target_html}")
+                else:
+                    print(f"⚠️ Warning: No injection markers found in {target_html}")
+
+                os.remove(snippet_file)
+            else:
+                print(f"❓ No match found for '{filename}'. Expected '{target_html}'")
+
+if __name__ == "__main__":
+    auto_detect_and_inject()
