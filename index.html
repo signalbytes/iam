@@ -64,21 +64,26 @@
             color: var(--accent-color);
         }
         .hero {
-            /* This adds a dark purple overlay on top of an Unsplash tech image so text stays readable */
-            background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(124, 58, 237, 0.75)), 
-                        url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop');
+            position: relative;
+            background: linear-gradient(rgba(12, 10, 20, 0.8), rgba(124, 58, 237, 0.6)), 
+                        url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Parallax effect for that premium feel */
             color: white;
-            padding: 6rem 5%; /* Increased padding to show off the image */
+            padding: 8rem 5%;
             text-align: center;
-            border-radius: 1rem;
-            margin: 2rem 5%;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 1.5rem;
+            margin: 1rem 2%;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
             margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         .hero p {
             font-size: 1.25rem;
@@ -131,14 +136,16 @@
         .card-4 { grid-area: card4; }
         
         .adsense-unit {
-            border: 2px dashed #ccc;
-            background-color: #f9f9f9;
-            color: #888;
+            display: none; /* This hides the messy box from users */
+            margin: 2rem auto;
             text-align: center;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 0.5rem;
-            font-weight: 500;
+            /* Keep other styles below so you don't lose them */
+            padding: 20px;
+            background: #f8f9fa;
+            border: 1px dashed #e5e7eb;
+            border-radius: 8px;
+            color: #6b7280;
+            font-size: 0.875rem;
         }
 
         footer {
