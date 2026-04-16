@@ -1,49 +1,20 @@
-# SignalBytes
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-> Technology, decoded in small bites.
+# Run and deploy your AI Studio app
 
-**Live site:** [signalbytes.in](https://signalbytes.in)
+This contains everything you need to run your app locally.
 
----
+View your app in AI Studio: https://ai.studio/apps/ef60ee29-b12d-418d-b4d6-6367051bc6c7
 
-## Repository Structure
+## Run Locally
 
-```
-signalbytes.in/
-├── index.html        ← Homepage (Everyday Tech section)
-├── 404.html          ← Custom 404 page
-├── _config.yml       ← GitHub Pages config
-├── .nojekyll         ← Prevents Jekyll processing
-└── README.md
-```
+**Prerequisites:**  Node.js
 
-## Deploying to GitHub Pages
 
-1. Push all files to the `main` branch (root of repo)
-2. Go to **Settings → Pages**
-3. Source: **Deploy from a branch**
-4. Branch: `main` / `/ (root)`
-5. Save — site will be live at `signalbytes.in` within ~2 minutes
-
-## Custom Domain Setup
-
-In your repo root, create a file called `CNAME` containing:
-```
-signalbytes.in
-```
-
-Then in your domain registrar (e.g. Namecheap, GoDaddy), add these DNS records:
-
-| Type  | Host | Value                |
-|-------|------|----------------------|
-| A     | @    | 185.199.108.153      |
-| A     | @    | 185.199.109.153      |
-| A     | @    | 185.199.110.153      |
-| A     | @    | 185.199.111.153      |
-| CNAME | www  | signalbytes.github.io |
-
-DNS propagation can take up to 24 hours.
-
----
-
-Built with plain HTML/CSS/JS — no build tools, no dependencies, no framework.
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
