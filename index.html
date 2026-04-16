@@ -102,8 +102,8 @@
             grid-template-rows: auto auto;
             gap: 1.5rem;
             grid-template-areas:
-                "card1 card1 card2 card3"
-                "card1 card1 card4 card4";
+                "card2 card2 card1 card3"
+                "card2 card2 card4 card4";
         }
         .bento-card {
             background-color: var(--card-bg);
@@ -135,6 +135,42 @@
         .card-3 { grid-area: card3; }
         .card-4 { grid-area: card4; }
         
+        .premium-card {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2d1b4e 100%);
+            color: white !important;
+            border: 1px solid #7C3AED !important;
+            position: relative;
+            overflow: hidden;
+            justify-content: center;
+        }
+        .premium-card h3 {
+            font-size: 2.5rem !important;
+            color: white !important;
+            margin-bottom: 0.5rem;
+        }
+        .premium-card p {
+            font-size: 1.1rem;
+            color: #e5e7eb !important;
+        }
+        .premium-card svg {
+            width: 48px !important;
+            height: 48px !important;
+            color: #a78bfa !important;
+            margin-bottom: 1rem;
+        }
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .premium-card:hover::before {
+            opacity: 1;
+        }
+
         .adsense-unit {
             display: none; /* This hides the messy box from users */
             margin: 2rem auto;
@@ -259,7 +295,7 @@
         </a>
         <nav>
             <a href="index.html">Home</a>
-            <a href="gemini-india-guide.html">Gemini Guide</a>
+            <a href="ai-guide.html">AI Guide</a>
             <a href="smart-home-automation.html">Smart Home</a>
             <a href="cybersecurity-checklist.html">Cybersecurity</a>
             <a href="human-ai-prompts.html">AI Prompts</a>
@@ -277,16 +313,16 @@
         </div>
 
         <div class="bento-grid">
-            <a href="gemini-india-guide.html" class="bento-card card-1">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                <h3>Gemini India Guide</h3>
-                <p>Master Google's Gemini AI with our comprehensive guide tailored for Indian users. Learn prompt engineering and practical applications.</p>
-            </a>
-            
-            <a href="smart-home-automation.html" class="bento-card card-2">
+            <a href="smart-home-automation.html" class="bento-card card-1">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                 <h3>Smart Home Automation</h3>
                 <p>Transform your living space with intelligent devices and seamless automation routines.</p>
+            </a>
+
+            <a href="ai-guide.html" class="bento-card card-2 premium-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <h3>The Executive's AI Guide</h3>
+                <p>Master Google's Gemini AI with our comprehensive guide tailored for Indian users. Learn prompt engineering and practical applications.</p>
             </a>
 
             <a href="cybersecurity-checklist.html" class="bento-card card-3">

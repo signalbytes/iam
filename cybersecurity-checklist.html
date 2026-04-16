@@ -105,6 +105,65 @@
             font-family: monospace;
             font-size: 0.95rem;
         }
+        
+        /* Premium Action Checklist Style */
+        .action-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-left: 6px solid #7C3AED; /* Your Electric Violet Brand Color */
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .action-card h3 {
+            margin-top: 0;
+            color: #1A1A1A;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #374151;
+            line-height: 1.4;
+        }
+
+        .checkbox-icon {
+            width: 22px;
+            height: 22px;
+            background: #f3f0ff;
+            border: 2px solid #7C3AED;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .checkbox-icon::after {
+            content: '';
+            width: 10px;
+            height: 6px;
+            border-left: 2px solid #7C3AED;
+            border-bottom: 2px solid #7C3AED;
+            transform: rotate(-45deg);
+            display: none; /* Change to 'block' if you want them pre-checked */
+        }
+
+        .action-card:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 30px -10px rgba(124, 58, 237, 0.1);
+        }
+
         footer {
             text-align: center;
             padding: 2rem 5%;
@@ -140,7 +199,7 @@
         </a>
         <nav>
             <a href="index.html">Home</a>
-            <a href="gemini-india-guide.html">Gemini Guide</a>
+            <a href="ai-guide.html">AI Guide</a>
             <a href="smart-home-automation.html">Smart Home</a>
             <a href="cybersecurity-checklist.html">Cybersecurity</a>
             <a href="human-ai-prompts.html">AI Prompts</a>
@@ -171,11 +230,37 @@
         <h2>The Actionable Checklist</h2>
         <p>Don't get overwhelmed by enterprise security frameworks. Start with these five steps today.</p>
 
-<pre><code>[ ] 1. Install a Password Manager (1Password or Bitwarden) for all employees.
-[ ] 2. Enforce unique, 16+ character passwords for all business accounts.
-[ ] 3. Enable App-Based 2FA on Email, Banking, and CRM platforms.
-[ ] 4. Turn on automatic OS and browser updates on all work devices.
-[ ] 5. Remove admin privileges from standard employee user accounts.</code></pre>
+        <div class="action-card">
+            <h3>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                Actionable Next Steps
+            </h3>
+            
+            <div class="checklist-item">
+                <div class="checkbox-icon"></div>
+                <span><strong>Step 1:</strong> Install a Password Manager (Bitwarden or 1Password) for all employees.</span>
+            </div>
+
+            <div class="checklist-item">
+                <div class="checkbox-icon"></div>
+                <span><strong>Step 2:</strong> Enforce unique, 16+ character passwords for all business accounts.</span>
+            </div>
+
+            <div class="checklist-item">
+                <div class="checkbox-icon"></div>
+                <span><strong>Step 3:</strong> Enable App-Based 2FA on Email, Banking, and CRM platforms.</span>
+            </div>
+
+            <div class="checklist-item">
+                <div class="checkbox-icon"></div>
+                <span><strong>Step 4:</strong> Turn on automatic OS and browser updates on all work devices.</span>
+            </div>
+
+            <div class="checklist-item">
+                <div class="checkbox-icon"></div>
+                <span><strong>Step 5:</strong> Remove admin privileges from standard employee user accounts.</span>
+            </div>
+        </div>
 
     </div>
 
