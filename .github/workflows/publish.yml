@@ -1,0 +1,20 @@
+name: Word to Web
+on:
+  push:
+    paths: ['drafts/**']
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Pandoc
+        run: sudo apt-get install pandoc
+      - name: Run Magic Script
+        run: python3 convert.py
+      - name: Commit changes
+        run: |
+          git config --global user.name 'SignalBytes-Bot'
+          git config --global user.email 'bot@signalbytes.com'
+          git add .
+          git commit -m "Auto-published new article"
+          git push
