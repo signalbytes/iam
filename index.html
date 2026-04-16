@@ -148,6 +148,64 @@
             font-size: 0.875rem;
         }
 
+        /* Premium Action Checklist Style */
+        .action-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-left: 6px solid #7C3AED; /* Your Electric Violet Brand Color */
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .action-card h3 {
+            margin-top: 0;
+            color: #1A1A1A;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #374151;
+            line-height: 1.4;
+        }
+
+        .checkbox-icon {
+            width: 22px;
+            height: 22px;
+            background: #f3f0ff;
+            border: 2px solid #7C3AED;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .checkbox-icon::after {
+            content: '';
+            width: 10px;
+            height: 6px;
+            border-left: 2px solid #7C3AED;
+            border-bottom: 2px solid #7C3AED;
+            transform: rotate(-45deg);
+            display: none; /* Change to 'block' if you want them pre-checked */
+        }
+
+        .action-card:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 30px -10px rgba(124, 58, 237, 0.1);
+        }
+
         footer {
             text-align: center;
             padding: 2rem 5%;
