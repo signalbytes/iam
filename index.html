@@ -64,12 +64,17 @@
             color: var(--accent-color);
         }
         .hero {
-            background: linear-gradient(135deg, #7C3AED 0%, #1A1A1A 100%);
+            /* This adds a dark purple overlay on top of an Unsplash tech image so text stays readable */
+            background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(124, 58, 237, 0.75)), 
+                        url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 4rem 5%;
+            padding: 6rem 5%; /* Increased padding to show off the image */
             text-align: center;
             border-radius: 1rem;
             margin: 2rem 5%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         .hero h1 {
             font-size: 3rem;
