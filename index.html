@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignalBytes | AI & Tech Intelligence for Everyone</title>
+    <meta name="description" content="SignalBytes provides AI & Tech Intelligence for Everyone. Read guides on Gemini, Smart Home Automation, and Cybersecurity.">
+    <meta property="og:title" content="SignalBytes | AI & Tech Intelligence for Everyone">
+    <meta property="og:description" content="SignalBytes provides AI & Tech Intelligence for Everyone. Read guides on Gemini, Smart Home Automation, and Cybersecurity.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1A1A1A;
+            --accent-color: #7C3AED;
+            --card-bg: #f8f9fa;
+            --border-color: #e5e7eb;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent-color);
+        }
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        .hero {
+            background: linear-gradient(135deg, #7C3AED 0%, #1A1A1A 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+            border-radius: 1rem;
+            margin: 2rem 5%;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .container {
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto;
+            gap: 1.5rem;
+            grid-template-areas:
+                "card1 card1 card2 card3"
+                "card1 card1 card4 card4";
+        }
+        .bento-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--accent-color);
+        }
+        .bento-card svg {
+            width: 32px;
+            height: 32px;
+            color: var(--accent-color);
+        }
+        .bento-card h3 {
+            font-size: 1.5rem;
+        }
+        .card-1 { grid-area: card1; }
+        .card-2 { grid-area: card2; }
+        .card-3 { grid-area: card3; }
+        .card-4 { grid-area: card4; }
+        
+        .adsense-unit {
+            border: 2px dashed #ccc;
+            background-color: #f9f9f9;
+            color: #888;
+            text-align: center;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            color: #666;
+        }
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "card1 card1"
+                    "card2 card3"
+                    "card4 card4";
+            }
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "card1"
+                    "card2"
+                    "card3"
+                    "card4";
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            SignalBytes
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gemini-india-guide.html">Gemini Guide</a>
+            <a href="smart-home-automation.html">Smart Home</a>
+            <a href="cybersecurity-checklist.html">Cybersecurity</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>AI & Tech Intelligence for Everyone</h1>
+        <p>Actionable insights, guides, and checklists to navigate the digital frontier.</p>
+    </div>
+
+    <div class="container">
+        <div class="adsense-unit">
+            AdSense Placeholder
+        </div>
+
+        <div class="bento-grid">
+            <a href="gemini-india-guide.html" class="bento-card card-1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <h3>Gemini India Guide</h3>
+                <p>Master Google's Gemini AI with our comprehensive guide tailored for Indian users. Learn prompt engineering and practical applications.</p>
+            </a>
+            
+            <a href="smart-home-automation.html" class="bento-card card-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <h3>Smart Home Automation</h3>
+                <p>Transform your living space with intelligent devices and seamless automation routines.</p>
+            </a>
+
+            <a href="cybersecurity-checklist.html" class="bento-card card-3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <h3>Cybersecurity Checklist</h3>
+                <p>Protect your digital identity with our essential security practices and tools.</p>
+            </a>
+
+            <a href="index.html" class="bento-card card-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <h3>Latest Tech Insights</h3>
+                <p>Stay updated with the newest trends in artificial intelligence, software development, and consumer technology.</p>
+            </a>
+        </div>
+
+        <div class="adsense-unit">
+            AdSense Placeholder
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SignalBytes. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
+
