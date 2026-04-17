@@ -1,164 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cybersecurity Checklist | SignalBytes</title>
-  <meta name="description" content="Practical steps to secure accounts, devices, backups, privacy, and everyday browsing habits without turning security into a full-time job." />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="https://www.signalbytes.in/cybersecurity-checklist.html" />
-  <meta property="og:title" content="Cybersecurity Checklist | SignalBytes" />
-  <meta property="og:description" content="Practical steps to secure accounts, devices, backups, privacy, and everyday browsing habits without turning security into a full-time job." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.signalbytes.in/cybersecurity-checklist.html" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=Source+Serif+4:opsz,wght@8..144,400;8..144,600&family=Saira+Condensed:wght@500;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f5f3f8; --surface:#ffffff; --surface-soft:#faf7ff; --ink:#1a1a1a; --muted:#5c5568;
-      --line:#e7dff0; --brand:#7C3AED; --shadow:0 18px 48px rgba(46,19,93,.08); --max:1160px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Serif 4',serif;line-height:1.7}
-    a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
-    .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
-    .site-header{position:sticky;top:0;z-index:50;background:rgba(245,243,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(231,223,240,.92)}
-    .nav-shell{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:16px;min-width:0}
-    .brand-mark{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-family:'Saira Condensed',sans-serif;font-size:30px;font-weight:600;color:var(--brand);background:linear-gradient(180deg,#f3edff,#ece3ff);border:1px solid #ddd0f6;box-shadow:inset 0 10px 25px rgba(124,58,237,.08)}
-    .brand-text,.nav-link,.footer-link,.eyebrow,.meta-chip{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.7px}
-    .brand-text{font-size:1.04rem;font-weight:600;white-space:nowrap}
-    .nav-toggle{display:none;width:56px;height:56px;border-radius:18px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);cursor:pointer}
-    .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);border-radius:999px;margin:5px auto}
-    .nav-menu{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-    .nav-link{color:#322b3d;font-size:.96rem;padding:11px 16px;border-radius:999px}
-    .nav-link:hover,.nav-link.active{background:#eadffd;color:var(--brand)}
-    main{padding:26px 0 10px}
-    .section-hero{border-radius:28px;padding:28px 34px 24px;background:linear-gradient(135deg, rgba(31,16,58,.95), rgba(111,62,224,.86)), var(--hero-image) center/cover no-repeat;color:#fff;box-shadow:var(--shadow);margin-bottom:26px;overflow:hidden}
-    .section-hero-inner{max-width:780px}
-    .eyebrow{display:inline-flex;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:999px;padding:8px 12px;font-size:.9rem;margin-bottom:14px}
-    h1,h2,h3{font-family:'PT Serif',serif;line-height:1.12;letter-spacing:-.02em;margin:0}
-    .section-hero h1{font-size:clamp(1.95rem,3vw,2.7rem);margin-bottom:10px;max-width:15ch}
-    .section-hero p{margin:0;font-size:1rem;max-width:68ch;color:rgba(255,255,255,.92)}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:8px 0 16px}
-    .section-head h2{font-size:clamp(1.55rem,2.3vw,2.15rem)}
-    .section-head p{margin:0;max-width:58ch;color:var(--muted)}
-    .article-list{display:grid;gap:18px}
-    .article-card{display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:14px;box-shadow:var(--shadow)}
-    .thumb{aspect-ratio:16/10;min-height:132px;border-radius:16px;overflow:hidden;background:#ece6f5}
-    .thumb img{width:100%;height:100%;object-fit:cover}
-    .meta-chip{display:inline-block;border-radius:999px;padding:6px 10px;background:#f1e9ff;color:var(--brand);border:1px solid #e0d1fd;font-size:.84rem;margin-bottom:10px}
-    .article-card h3{font-size:clamp(1.2rem,2.1vw,1.62rem);color:var(--ink);margin-bottom:6px}
-    .article-card p{margin:0;color:var(--muted);font-size:1rem;line-height:1.58}
-    .editorial-note{margin:28px 0 10px;background:linear-gradient(180deg,#fff,#faf7ff);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow)}
-    .editorial-note h2{font-size:1.42rem;margin-bottom:8px}
-    .editorial-note p{margin:0;color:var(--muted)}
-    .site-footer{margin-top:34px;border-top:1px solid var(--line);padding:24px 0 46px;color:var(--muted)}
-    .footer-grid{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    .footer-links{display:flex;flex-wrap:wrap;gap:12px}
-    .footer-link{font-size:.92rem;color:#41384d}
-    @media (max-width:760px){
-      .nav-toggle{display:block}
-      .nav-menu{display:none;position:absolute;left:16px;right:16px;top:78px;background:rgba(255,255,255,.98);border:1px solid var(--line);border-radius:22px;padding:10px;flex-direction:column;align-items:stretch;box-shadow:0 22px 56px rgba(46,19,93,.14)}
-      .nav-menu.open{display:flex}
-      .nav-link{padding:14px 16px}
-      .section-hero{padding:22px 18px 18px;border-radius:24px}
-      .section-hero h1{font-size:1.72rem;max-width:none}
-      .section-hero p{font-size:.95rem}
-      .section-head{display:block}
-      .article-card{grid-template-columns:110px minmax(0,1fr);gap:12px;padding:10px}
-      .thumb{min-height:76px;border-radius:14px}
-      .article-card h3{font-size:1.02rem;margin-bottom:4px}
-      .article-card p{font-size:.93rem;line-height:1.44}
-    }
-  </style>
-
-  <style>:root{--hero-image:url('https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80');}</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7c3aed">
+  <title>Cybersecurity | SignalBytes</title>
+  <meta name="description" content="Practical steps to secure accounts, devices, backups, privacy, and everyday browsing habits without turning security into a full-time job.">
+  <link rel="canonical" href="https://www.signalbytes.in/cybersecurity-checklist.html">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:title" content="Cybersecurity | SignalBytes">
+  <meta property="og:description" content="Practical steps to secure accounts, devices, backups, privacy, and everyday browsing habits without turning security into a full-time job.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.signalbytes.in/cybersecurity-checklist.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-  <div class="container nav-shell">
-    <a href="index.html" class="brand" aria-label="SignalBytes home">
-      <div class="brand-mark">⚡</div>
-      <div class="brand-text">SignalBytes</div>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav-menu" id="navMenu">
-      <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link" href="ai-guide.html">AI Guide</a>
-      <a class="nav-link" href="creator-workflows.html">Creator Workflows</a>
-      <a class="nav-link" href="smart-home-automation.html">Future Living</a>
-      <a class="nav-link active" href="cybersecurity-checklist.html">Cybersecurity</a>
-    </nav>
-  </div>
-</header>
-  <main class="container">
-    <section class="section-hero" aria-label="Cybersecurity">
-      <div class="section-hero-inner">
-        <div class="eyebrow">Cybersecurity</div>
-        <h1>Cybersecurity basics that protect your data</h1>
-        <p>Practical steps to secure accounts, devices, backups, privacy, and everyday browsing habits without turning security into a full-time job.</p>
-      </div>
-    </section>
-    <section>
-      <div class="section-head">
-        <h2>Featured guides</h2>
-        <p>Updated navigation now uses Future Living consistently across the public section pages.</p>
-      </div>
-      <div class="article-list">
+<div class="site-shell">
+<header class="site-header"><div class="header-inner"><a class="brand" href="index.html" aria-label="SignalBytes home"><span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 11-14h-6l1-6Z"/></svg></span><span class="brand-name">SignalBytes</span></a><div class="site-nav"><button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav class="nav-links" aria-label="Primary"><a class="nav-link" href="index.html">Home</a><a class="nav-link" href="ai-guide.html">AI Guide</a><a class="nav-link" href="creator-workflows.html">Creator Workflows</a><a class="nav-link" href="future-living.html">Future Living</a><a class="nav-link active" href="cybersecurity-checklist.html">Cybersecurity</a></nav></div></div></header>
+<main class="page-wrap category-page">
+  <section class="category-intro">
+    <div class="kicker">Cybersecurity</div>
+    <h1>Cybersecurity works best when it is readable, practical, and built into normal habits.</h1>
+    <p class="category-standfirst">Practical steps to secure accounts, devices, backups, privacy, and everyday browsing habits without turning security into a full-time job.</p>
+    <div class="topic-tags"><span class="topic-tag">Passwords & MFA</span><span class="topic-tag">Backups</span><span class="topic-tag">Privacy hygiene</span><span class="topic-tag">Device updates</span></div>
+  </section>
 
-        <a class="article-card" href="cybersecurity-checklist.html">
-          <div class="thumb"><img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=900&q=80" alt="Cybersecurity dashboard and laptop" loading="lazy"></div>
-          <div>
-            <span class="meta-chip">Core Checklist</span>
-            <h3>Cybersecurity basics that protect your data</h3>
-            <p>Practical steps to secure accounts, devices, backups, privacy, and everyday browsing habits.</p>
-          </div>
-        </a>
-
-        <a class="article-card" href="cybersecurity-checklist.html">
-          <div class="thumb"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80" alt="Digital identity and login protection" loading="lazy"></div>
-          <div>
-            <span class="meta-chip">Identity & Access</span>
-            <h3>Secure the accounts that can reset everything else</h3>
-            <p>Why email, passwords, MFA, and recovery settings deserve your strongest protection first.</p>
-          </div>
-        </a>
-      </div>
-    </section>
-    <section class="editorial-note">
-      <h2>Editorial note</h2>
-      <p>Navigation updated to use Future Living consistently.</p>
-    </section>
-  </main>
-  <footer class="site-footer">
-  <div class="container footer-grid">
-    <div>© 2026 SignalBytes. Independent technology publishing.</div>
-    <div class="footer-links">
-      <a class="footer-link" href="about.html">About SignalBytes</a>
-      <a class="footer-link" href="contact.html">Contact</a>
-      <a class="footer-link" href="privacy.html">Privacy Policy</a>
-      <a class="footer-link" href="terms.html">Terms of Use</a>
+  <section class="editorial-grid" aria-label="Featured editorial layout">
+    <div class="rail rail-left">
+      <article class="support-story"><a class="story-image-link" href="cybersecurity-checklist.html"><img class="story-image support" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80" alt="Digital identity protection concept" loading="lazy" width="800" height="600"></a><div class="story-label">Identity & Access</div><a href="cybersecurity-checklist.html"><h3 class="story-title">Secure the accounts that can reset everything else</h3></a><p class="story-excerpt">Why email, passwords, MFA, and recovery settings deserve the strongest protection.</p><div class="story-meta"><span><strong>By SignalBytes Editorial Team</strong></span><span>Updated April 2026</span></div></article><article class="support-story"><a class="story-image-link" href="cybersecurity-checklist.html"><img class="story-image support" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Backup and data security setup" loading="lazy" width="800" height="600"></a><div class="story-label">Backups</div><a href="cybersecurity-checklist.html"><h3 class="story-title">Backups are a security tool, not just a storage habit</h3></a><p class="story-excerpt">Recovery planning matters as much as prevention when something goes wrong.</p><div class="story-meta"><span><strong>By SignalBytes Editorial Team</strong></span><span>Updated April 2026</span></div></article>
     </div>
-    <div>Editorial contact: technodate3@gmail.com</div>
-  </div>
-</footer>
-  <script>
-const toggle = document.getElementById('navToggle');
-const menu = document.getElementById('navMenu');
-if (toggle && menu) {
-  toggle.addEventListener('click', () => {
-    const open = menu.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-  });
-}
-</script>
+
+    <div class="hero-column">
+      <article class="hero-feature">
+        <a class="story-image-link" href="cybersecurity-checklist.html"><img class="story-image landscape" src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80" alt="Laptop and security dashboard in dark workspace" loading="eager" width="1280" height="720"></a>
+        <div class="story-label">Hero Feature</div>
+        <a href="cybersecurity-checklist.html"><h2 class="hero-feature-title">Cybersecurity basics that protect your data</h2></a>
+        <p class="story-excerpt">A grounded starter guide to strengthening accounts, devices, backups, privacy, and recovery settings without turning security into a second job.</p>
+        <div class="story-meta"><span><strong>By SignalBytes Editorial Team</strong></span><span>Updated April 2026</span></div>
+      </article>
+    </div>
+
+    <aside class="rail rail-right">
+      <h2 class="feed-title">Latest in Cybersecurity</h2>
+      <article class="feed-story"><div class="story-label">Devices</div><a href="cybersecurity-checklist.html"><h3>Update the devices that quietly hold the most risk</h3></a><p class="story-excerpt">Phones, laptops, browsers, and routers need predictable maintenance.</p><div class="story-meta"><span>SignalBytes Editorial Team</span><span>April 2026</span></div></article><article class="feed-story"><div class="story-label">Privacy</div><a href="cybersecurity-checklist.html"><h3>Reduce exposure before you need to recover from it</h3></a><p class="story-excerpt">Small privacy improvements often prevent larger security headaches later.</p><div class="story-meta"><span>SignalBytes Editorial Team</span><span>April 2026</span></div></article><article class="feed-story"><div class="story-label">Checklist</div><a href="cybersecurity-checklist.html"><h3>The core habits worth doing first</h3></a><p class="story-excerpt">Start with passwords, MFA, recovery methods, and backups.</p><div class="story-meta"><span>SignalBytes Editorial Team</span><span>April 2026</span></div></article><article class="feed-story"><div class="story-label">Connected Homes</div><a href="future-living.html"><h3>Future living needs security thinking too</h3></a><p class="story-excerpt">Smart devices are safer when security is part of the setup, not an afterthought.</p><div class="story-meta"><span>SignalBytes Editorial Team</span><span>April 2026</span></div></article>
+    </aside>
+  </section>
+
+  <section class="more-stories">
+    <div class="section-heading"><h2>More in Cybersecurity</h2><p>Horizontal story rows keep the page scannable, open, and editorial — without falling back into boxed card clutter.</p></div>
+    <div class="more-grid"><article class="horizontal-story"><a class="story-image-link" href="cybersecurity-checklist.html"><img class="story-image row" src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80" alt="Security dashboard on laptop for cyber basics guide" loading="lazy" width="960" height="600"></a><div><div class="story-label">Starter Guide</div><a href="cybersecurity-checklist.html"><h3 class="story-title">Cybersecurity basics that protect your data</h3></a><p class="story-excerpt">The main SignalBytes security guide for stronger everyday resilience.</p><div class="story-meta"><span><strong>By SignalBytes Editorial Team</strong></span><span>Updated April 2026</span></div></div></article><article class="horizontal-story"><a class="story-image-link" href="future-living.html"><img class="story-image row" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Modern connected home interior" loading="lazy" width="960" height="600"></a><div><div class="story-label">Future Living</div><a href="future-living.html"><h3 class="story-title">Protect the connected devices you bring into your home</h3></a><p class="story-excerpt">Home automation and security planning belong together.</p><div class="story-meta"><span><strong>By SignalBytes Editorial Team</strong></span><span>Updated April 2026</span></div></div></article><article class="horizontal-story"><a class="story-image-link" href="ai-guide.html"><img class="story-image row" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Digital workflow and planning desk" loading="lazy" width="960" height="600"></a><div><div class="story-label">AI Guide</div><a href="ai-guide.html"><h3 class="story-title">Secure the files, accounts, and workflows behind your AI tools</h3></a><p class="story-excerpt">AI productivity is only useful when the surrounding workflow is secure.</p><div class="story-meta"><span><strong>By SignalBytes Editorial Team</strong></span><span>Updated April 2026</span></div></div></article></div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><h2>Explore more</h2><p>Cross-linking related sections strengthens navigation, dwell time, and keyword context without making the page feel mechanical.</p></div>
+    <div class="explore-grid"><article class="explore-card"><div class="story-label">Related Section</div><a href="future-living.html"><h3>Future Living</h3></a><p class="story-excerpt">Connected homes need stronger default security and account hygiene.</p></article><article class="explore-card"><div class="story-label">Related Section</div><a href="ai-guide.html"><h3>AI Guide</h3></a><p class="story-excerpt">Use AI in workstreams that stay controlled, reviewable, and secure.</p></article></div>
+  </section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="editorial-policy.html">Editorial Policy</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="sitemap.xml">Sitemap</a></div><p>© 2026 SignalBytes. Independent technology publishing focused on practical AI, creator workflows, future living, and digital safety.</p><p>Editorial contact: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p></div></footer>
+<div id="cookie-banner" class="cookie-banner"><div><strong>Privacy notice:</strong> SignalBytes uses cookies for analytics, site functionality, and future advertising. Review details in our <a href="privacy.html" style="color:#d8c6ff;text-decoration:underline">Privacy Policy</a>.</div><div class="cookie-actions"><button class="btn" type="button" onclick="handleConsent('denied')">Reject all</button><button class="btn primary" type="button" onclick="handleConsent('granted')">Accept all</button></div></div>
+<script src="script.js" defer></script>
+</div>
 </body>
 </html>
