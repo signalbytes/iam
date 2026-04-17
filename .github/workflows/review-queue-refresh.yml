@@ -1,0 +1,56 @@
+name: Review Queue Refresh
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many recent days of feed items to consider"
+        required: false
+        default: "10"
+      limit_per_feed:
+        description: "Maximum items to fetch per feed"
+        required: false
+        default: "12"
+      max_items:
+        description: "Maximum topics to show in the review queue"
+        required: false
+        default: "18"
+      min_score:
+        description: "Minimum score to keep an item"
+        required: false
+        default: "0.45"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-review-queue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch latest feed items
+        run: |
+          python automation/fetch_rss.py \
+            --days "${{ github.event.inputs.days }}" \
+            --limit-per-feed "${{ github.event.inputs.limit_per_feed }}"
+
+      - name: Build review queue files
+        run: |
+          python automation/build_review_queue.py \
+            --max-items "${{ github.event.inputs.max_items }}" \
+            --min-score "${{ github.event.inputs.min_score }}"
+
+      - name: Commit updated queue files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/raw_feed_items.json automation/review_queue.json automation/review_queue.md automation/README.md
+          git diff --cached --quiet && echo "No changes to commit" || git commit -m "chore: refresh review queue"
+          git push
