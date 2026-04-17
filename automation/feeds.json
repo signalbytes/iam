@@ -1,0 +1,12 @@
+{
+  "feeds": [
+    {"name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "category_hint": "AI Guide"},
+    {"name": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/", "category_hint": "AI Guide"},
+    {"name": "The Verge - AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category_hint": "AI Guide"},
+    {"name": "The Verge - Creator", "url": "https://www.theverge.com/rss/creators/index.xml", "category_hint": "Creator Workflows"},
+    {"name": "WIRED Gear", "url": "https://www.wired.com/feed/tag/gear/latest/rss", "category_hint": "Future Living"},
+    {"name": "CISA News", "url": "https://www.cisa.gov/news.xml", "category_hint": "Cybersecurity"},
+    {"name": "Krebs on Security", "url": "https://krebsonsecurity.com/feed/", "category_hint": "Cybersecurity"},
+    {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/feed/", "category_hint": "Cybersecurity"}
+  ]
+}
