@@ -1,32 +1,117 @@
-<footer>
-        <div style="margin-bottom: 1rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap;">
-            <a href="about.html">About SignalBytes</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Use</a>
+  <style>
+    .site-footer-wrap { padding: 1.8rem 0 4rem; }
+    .site-footer-grid {
+      width: min(92%, 1220px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+    .site-footer-card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(124,58,237,0.12);
+      border-radius: 22px;
+      box-shadow: 0 18px 45px rgba(24, 20, 44, 0.08);
+      padding: 1.4rem;
+    }
+    .site-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.2rem;
+      margin-bottom: 0.95rem;
+    }
+    .site-footer-links a {
+      text-decoration: none;
+      color: #5b21b6;
+      font-family: 'Saira Condensed', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.95rem;
+    }
+    .site-footer-small {
+      font-size: 0.95rem;
+      color: #5b5b5b;
+      line-height: 1.6;
+      font-family: 'Source Serif 4', serif;
+    }
+    #cookie-banner {
+      display: none;
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      width: min(94%, 760px);
+      z-index: 9999;
+      background: rgba(22,18,35,0.96);
+      color: white;
+      border: 1px solid rgba(167,139,250,0.28);
+      border-radius: 22px;
+      padding: 1rem;
+      box-shadow: 0 20px 60px rgba(9,7,17,0.45);
+      backdrop-filter: blur(14px);
+      font-family: 'Source Serif 4', serif;
+    }
+    #cookie-banner p { color: rgba(255,255,255,0.84); font-size: 0.98rem; margin-bottom: 0.9rem; }
+    #cookie-banner a { color: #c4b5fd; }
+    .cookie-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 0.75rem; }
+    .cookie-btn {
+      border-radius: 999px;
+      padding: 0.78rem 1.1rem;
+      min-height: 46px;
+      cursor: pointer;
+      font-family: 'Saira Condensed', sans-serif;
+      font-size: 0.94rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cookie-btn-outline { background: transparent; color: rgba(255,255,255,0.88); border: 1px solid rgba(255,255,255,0.2); }
+    .cookie-btn-primary { background: #8b5cf6; color: white; border: none; }
+    @media (max-width: 900px) {
+      .site-footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .site-footer-links { flex-direction: column; gap: 0.5rem; }
+      #cookie-banner { bottom: 12px; border-radius: 18px; padding: 0.95rem; }
+      .cookie-actions { justify-content: stretch; }
+      .cookie-btn { width: 100%; }
+    }
+  </style>
+  <div class="site-footer-wrap">
+    <div class="site-footer-grid">
+      <div class="site-footer-card">
+        <div class="site-footer-links">
+          <a href="about.html">About SignalBytes</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
         </div>
-        <p>&copy; 2026 SignalBytes. Independent technology publishing.</p>
-        <p>Editorial contact: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p>
-    </footer>
-    <div id="cookie-banner" class="cookie-banner">
-      <div><strong>Privacy notice:</strong> SignalBytes uses cookies for analytics, site functionality, and future advertising. Choose Accept to allow consent-based personalization, or Reject to continue with basic storage disabled. See our <a href="privacy.html" style="color:#cbb8ff;">Privacy Policy</a>.</div>
-      <div class="cookie-actions">
-        <button class="btn btn-secondary" onclick="handleConsent('denied')">Reject All</button>
-        <button class="btn btn-primary" onclick="handleConsent('granted')">Accept All</button>
+        <p class="site-footer-small">© 2026 SignalBytes. Independent technology publishing focused on useful guides for AI, creator workflows, smart homes, and digital safety.</p>
+      </div>
+      <div class="site-footer-card">
+        <h3 style="margin-bottom:0.5rem;">Editorial contact</h3>
+        <p class="site-footer-small">technodate3@gmail.com</p>
+        <p class="site-footer-small" style="margin-top:0.55rem;">Privacy notice: SignalBytes uses cookies for analytics, site functionality, and future advertising. Choose Accept to allow consent-based personalization, or Reject to continue with basic storage disabled.</p>
       </div>
     </div>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-      window.onload = function() {
-        if (!localStorage.getItem('sb_consent')) {
-          document.getElementById('cookie-banner').style.display = 'block';
-        }
-      };
-      function handleConsent(status) {
-        localStorage.setItem('sb_consent', status);
-        document.getElementById('cookie-banner').style.display = 'none';
+  </div>
+  <div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner">
+    <p><strong>SignalBytes Privacy:</strong> We use cookies for analytics, site functionality, and future advertising. Choose Accept to allow consent-based personalization, or Reject to continue with basic storage disabled. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn-outline" type="button" onclick="handleConsent('denied')">Reject all</button>
+      <button class="cookie-btn cookie-btn-primary" type="button" onclick="handleConsent('granted')">Accept all</button>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('load', () => {
+      if (!localStorage.getItem('sb_consent')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+      }
+    });
+    function handleConsent(status) {
+      localStorage.setItem('sb_consent', status);
+      document.getElementById('cookie-banner').style.display = 'none';
+      if (typeof gtag === 'function') {
         gtag('consent', 'update', {
           ad_storage: status,
           analytics_storage: status,
@@ -34,6 +119,7 @@
           ad_personalization: status
         });
       }
-    </script>
+    }
+  </script>
 </body>
 </html>
