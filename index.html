@@ -1,246 +1,318 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SignalBytes.in | Premium AI, Future Living, Digital Safety & Creator Systems</title>
-  <meta name="description" content="SignalBytes.in is a premium technology magazine covering AI workflows, future living, digital safety, and creator systems through clear, human-reviewed editorial analysis." />
-  <meta property="og:title" content="SignalBytes.in | Premium Technology Magazine" />
-  <meta property="og:description" content="A premium editorial homepage for AI workflows, future living, digital safety, and creator systems." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="hero-bg.png" />
-  <meta name="theme-color" content="#121212" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23121212'/%3E%3Cpath d='M24 52h16l-7 24 30-32H46l8-20' fill='none' stroke='%23007bff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignalBytes — AI Intelligence, Creator Systems & Future Living</title>
+    <meta name="description" content="Premium editorial coverage of AI workflows, future living, digital safety, and creator systems. Independent guides for the intelligent age.">
+    <meta name="theme-color" content="#F7F4EE">
+    <meta property="og:title" content="SignalBytes — Master Your Digital World">
+    <meta property="og:description" content="Premium editorial coverage of AI workflows, future living, digital safety, and creator systems.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="progress-bar" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="container nav-shell">
-      <a href="index.html" class="logo" aria-label="SignalBytes.in home">
-        <span class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
-            <path d="M17 33h11l-5 14 24-26H36l6-14" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </span>
-        <span class="logo-text">SignalBytes.in</span>
-      </a>
+    <!-- Reading Progress Bar -->
+    <div id="progress-bar" aria-hidden="true"></div>
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <!-- Sticky Navigation (uses legacy .site-header classes so partials stay compatible) -->
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <a href="index.html" class="brand" aria-label="SignalBytes home">
+                <span class="brand-mark">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 11-14h-6l1-6Z"/></svg>
+                </span>
+                <span class="brand-name">SignalBytes<span class="brand-dot">.in</span></span>
+            </a>
 
-      <nav class="primary-nav" id="primary-menu" aria-label="Primary">
-        <a href="ai-guide.html">AI Workflows</a>
-        <a href="future-living.html">Future Living</a>
-        <a href="cybersecurity-checklist.html">Digital Safety</a>
-        <a href="creator-workflows.html">Creator Systems</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="icon-button" type="button" aria-label="Search">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M10.5 4a6.5 6.5 0 1 0 4.03 11.6l4.43 4.43 1.41-1.41-4.43-4.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"></path>
-          </svg>
-        </button>
-
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="true">
-          <span class="theme-icon">☀</span>
-          <span class="theme-switch"><span class="theme-knob"></span></span>
-          <span class="theme-icon">☾</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero-section">
-      <div class="container hero-grid">
-        <article class="hero-feature bento-card hero-surface">
-          <div class="feature-kicker-row">
-            <span class="section-kicker">Featured Story</span>
-            <span class="meta-chip meta-chip-warm">Human Reviewed</span>
-          </div>
-
-          <h1 class="entry-title">The Zero-Labor Weekend: Is 2026 the year your home runs itself?</h1>
-
-          <p class="feature-standfirst">
-            Smart routines, ambient sensors, local AI assistants, and energy-aware devices are finally moving from demo theater into daily life. The real story is not hype. It is which systems reduce friction, save time, and quietly work without demanding constant attention.
-          </p>
-
-          <div class="feature-meta-row">
-            <div class="author-chip">
-              <span class="author-avatar">SB</span>
-              <div>
-                <strong>SignalBytes Desk</strong>
-                <span>Editorial review</span>
-              </div>
+            <div class="site-nav">
+                <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+                    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
+                <nav class="nav-links" aria-label="Primary">
+                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link" href="ai-guide.html">AI Workflows</a>
+                    <a class="nav-link" href="future-living.html">Future Living</a>
+                    <a class="nav-link" href="cybersecurity-checklist.html">Digital Safety</a>
+                    <a class="nav-link" href="creator-workflows.html">Creator Systems</a>
+                </nav>
             </div>
-            <span class="meta-chip">12 Min Deep-Dive</span>
-          </div>
-        </article>
-
-        <aside class="hero-intel bento-card" aria-label="Fast Intel">
-          <div class="fast-intel-head">
-            <span class="section-kicker">Fast Intel</span>
-            <span class="intel-live"><span></span>Live</span>
-          </div>
-
-          <div class="intel-list">
-            <a class="intel-item" href="ai-guide.html">
-              <span class="intel-title">Nvidia XFRA expands edge inference for practical consumer AI stacks</span>
-              <span class="intel-meta">3 min read</span>
-            </a>
-            <a class="intel-item" href="future-living.html">
-              <span class="intel-title">Matter 2.0 pushes interoperability closer to normal everyday reliability</span>
-              <span class="intel-meta">4 min read</span>
-            </a>
-            <a class="intel-item" href="creator-workflows.html">
-              <span class="intel-title">Creator laptops shift toward faster local AI editing and lighter cloud dependence</span>
-              <span class="intel-meta">5 min read</span>
-            </a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="ticker-band" aria-label="Signal Noise">
-      <div class="ticker-fade ticker-fade-left" aria-hidden="true"></div>
-      <div class="ticker-fade ticker-fade-right" aria-hidden="true"></div>
-      <div class="ticker-viewport">
-        <div class="ticker-track" id="ticker-track">
-          <span>SIGNAL/NOISE</span>
-          <span>Nvidia XFRA launches practical edge AI stack</span>
-          <span>Matter 2.0 update released</span>
-          <span>Solar efficiency hits 28%</span>
-          <span>Passkeys gain broader consumer adoption</span>
-          <span>Local-first AI workflows keep growing</span>
-          <span>SIGNAL/NOISE</span>
-          <span>Nvidia XFRA launches practical edge AI stack</span>
-          <span>Matter 2.0 update released</span>
-          <span>Solar efficiency hits 28%</span>
-          <span>Passkeys gain broader consumer adoption</span>
-          <span>Local-first AI workflows keep growing</span>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <section class="home-grid-section">
-      <div class="container">
-        <div class="bento-grid">
-          <a href="ai-guide.html" class="bento-card bento-link span-2x2 feature-card">
-            <div class="card-kicker">Applied AI</div>
-            <h2>Where AI workflows genuinely save time and where human judgment still matters most</h2>
-            <p>
-              The strongest AI systems in 2026 are not replacing editorial thinking. They are reducing repetitive load, accelerating first drafts, improving retrieval, and helping people focus on higher-value decisions.
-            </p>
-            <div class="card-footer">
-              <span class="card-tag">AI Workflows</span>
-              <span class="reading-time">9 min read</span>
-            </div>
-          </a>
+    <main id="main" class="page-wrap">
 
-          <a href="future-living.html" class="bento-card bento-link span-2x1 accent-blue">
-            <div class="card-kicker">Future Living</div>
-            <h2>Quiet automation is replacing flashy smart-home demos</h2>
-            <p>
-              The real win is a calmer home: lighting, climate, presence sensing, and routines that behave usefully in the background.
-            </p>
-            <div class="card-footer">
-              <span class="card-tag">Future Living</span>
-              <span class="reading-time">6 min read</span>
-            </div>
-          </a>
+        <!-- Asymmetric Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-grid">
+                <article class="hero-feature">
+                    <div class="hero-meta-row">
+                        <span class="pill pill-accent">Cover Story · Vol 04</span>
+                        <span class="pill pill-soft">Issue · April 2026</span>
+                    </div>
 
-          <a href="cybersecurity-checklist.html" class="bento-card bento-link span-2x1 accent-orange">
-            <div class="card-kicker">Digital Resilience</div>
-            <h2>Security becomes meaningful when ordinary people can actually keep up with it</h2>
-            <p>
-              Passkeys, safer defaults, cleaner device hygiene, and local backups matter more than technical theater.
-            </p>
-            <div class="card-footer">
-              <span class="card-tag">Digital Safety</span>
-              <span class="reading-time">7 min read</span>
-            </div>
-          </a>
+                    <h1 id="hero-title" class="entry-title">
+                        The Zero-Labour Weekend: Is 2026 the year your home finally runs itself?
+                    </h1>
 
-          <a href="creator-workflows.html" class="bento-card bento-link span-1x1">
-            <div class="card-kicker">Creator Systems</div>
-            <h2>The quiet creator stack is getting faster and more dependable</h2>
-            <p>
-              Better file flow, cleaner publishing systems, and lighter friction across writing, editing, and distribution.
-            </p>
-            <div class="card-footer">
-              <span class="card-tag">Creator Systems</span>
-              <span class="reading-time">8 min read</span>
-            </div>
-          </a>
+                    <p class="hero-dek">
+                        Matter 2.0, ambient agents and local-first automation are quietly collapsing the gap
+                        between a "smart home" and a home that simply thinks for you. We spent six weekends
+                        testing the stack so you don't have to.
+                    </p>
 
-          <a href="best-ai-office-productivity-tools-2026.html" class="bento-card bento-link span-1x1">
-            <div class="card-kicker">Signal Brief</div>
-            <h2>Why more AI products are moving on-device</h2>
-            <p>Lower latency, stronger privacy, and lower cloud cost are changing the shape of product design.</p>
-            <div class="card-footer">
-              <span class="card-tag">Explainer</span>
-              <span class="reading-time">4 min read</span>
-            </div>
-          </a>
+                    <div class="hero-byline">
+                        <div class="byline-author">
+                            <span class="avatar" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </span>
+                            <div class="byline-text">
+                                <span class="byline-badge">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    Human Reviewed
+                                </span>
+                                <span class="byline-name">Prerak Shah · Editor</span>
+                            </div>
+                        </div>
+                        <span class="read-time">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            12 Min Deep-Dive
+                        </span>
+                    </div>
 
-          <a href="best-smart-home-routines-automation-ideas-2026.html" class="bento-card bento-link span-2x1 muted-panel">
-            <div class="card-kicker">Editorial Note</div>
-            <h2>SignalBytes tracks useful technology, not noise dressed up as momentum</h2>
-            <p>
-              We focus on systems that feel durable, readable, and practical. The goal is clear analysis with strong visual restraint and high signal.
-            </p>
-            <div class="card-footer">
-              <span class="card-tag">Editorial</span>
-              <span class="reading-time">5 min read</span>
-            </div>
-          </a>
+                    <a href="smart-home-automation.html" class="hero-cta">
+                        Read the full investigation
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </a>
+                </article>
 
-          <a href="best-smart-home-security-devices-2026.html" class="bento-card bento-link span-1x1 compact-card">
-            <div class="card-kicker">Watchlist</div>
-            <h2>The smart-home claims still worth being skeptical about</h2>
-            <div class="card-footer">
-              <span class="card-tag">Signal Check</span>
-              <span class="reading-time">3 min read</span>
-            </div>
-          </a>
+                <aside class="fast-intel" aria-label="Fast Intel">
+                    <header class="fast-intel-head">
+                        <h2>Fast Intel</h2>
+                        <span class="live-tag"><span class="pulse" aria-hidden="true"></span>Live</span>
+                    </header>
 
-          <a href="human-ai-prompts.html" class="bento-card bento-link span-1x1 compact-card">
-            <div class="card-kicker">System Scan</div>
-            <h2>What trustworthy AI assistance should feel like in normal daily use</h2>
-            <div class="card-footer">
-              <span class="card-tag">Workflow</span>
-              <span class="reading-time">4 min read</span>
+                    <ol class="intel-list">
+                        <li>
+                            <a href="best-ai-coding-prompting-guide-2026.html">
+                                <span class="intel-kicker">AI Workflows</span>
+                                <h3>The prompting habits separating senior engineers from the rest</h3>
+                                <span class="intel-meta">6 min read</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="best-smart-home-security-devices-2026.html">
+                                <span class="intel-kicker">Digital Safety</span>
+                                <h3>Seven smart-home security devices actually worth the shelf space</h3>
+                                <span class="intel-meta">8 min read</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="best-ai-video-editing-tools-2026.html">
+                                <span class="intel-kicker">Creator Systems</span>
+                                <h3>Inside the AI video stack indie studios are quietly using in 2026</h3>
+                                <span class="intel-meta">9 min read</span>
+                            </a>
+                        </li>
+                    </ol>
+                </aside>
             </div>
-          </a>
+        </section>
+
+        <!-- Signal / Noise Ticker -->
+        <section class="ticker" aria-label="Signal and Noise ticker">
+            <div class="ticker-label">Signal<span>/</span>Noise</div>
+            <div class="ticker-track">
+                <div class="ticker-run" aria-hidden="true">
+                    <span>Nvidia XFRA launches enterprise inference chip at 4× throughput</span>
+                    <span class="dot">◆</span>
+                    <span>Matter 2.0 rollout reaches 71% of shipping smart devices</span>
+                    <span class="dot">◆</span>
+                    <span>Perovskite-silicon solar efficiency clears 28.4% in field trial</span>
+                    <span class="dot">◆</span>
+                    <span>EU AI Act Tier-3 obligations now live for general-purpose models</span>
+                    <span class="dot">◆</span>
+                    <span>Passkeys surpass SMS 2FA in global consumer adoption</span>
+                    <span class="dot">◆</span>
+                    <span>Apple's on-device Siri gains agentic calendar actions in 18.5</span>
+                    <span class="dot">◆</span>
+                </div>
+                <div class="ticker-run" aria-hidden="true">
+                    <span>Nvidia XFRA launches enterprise inference chip at 4× throughput</span>
+                    <span class="dot">◆</span>
+                    <span>Matter 2.0 rollout reaches 71% of shipping smart devices</span>
+                    <span class="dot">◆</span>
+                    <span>Perovskite-silicon solar efficiency clears 28.4% in field trial</span>
+                    <span class="dot">◆</span>
+                    <span>EU AI Act Tier-3 obligations now live for general-purpose models</span>
+                    <span class="dot">◆</span>
+                    <span>Passkeys surpass SMS 2FA in global consumer adoption</span>
+                    <span class="dot">◆</span>
+                    <span>Apple's on-device Siri gains agentic calendar actions in 18.5</span>
+                    <span class="dot">◆</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsroom-style Collection Grid -->
+        <section class="collection" aria-labelledby="collection-title">
+            <header class="collection-head">
+                <div>
+                    <span class="section-kicker">The Collection</span>
+                    <h2 id="collection-title">Signals worth your weekend</h2>
+                </div>
+                <p class="section-dek">
+                    Editorial threads we're developing this quarter — each card opens the full piece.
+                </p>
+            </header>
+
+            <div class="news-grid">
+
+                <a href="ai-guide.html" class="news-card">
+                    <div class="news-thumb news-thumb-violet">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="32" cy="32" r="18"/><circle cx="32" cy="32" r="10"/>
+                            <path d="M32 14v-6M32 56v-6M14 32h-6M56 32h-6M20 20l-4-4M48 48l-4-4M20 44l-4 4M48 20l-4 4"/>
+                        </svg>
+                    </div>
+                    <div class="news-body">
+                        <span class="news-kicker">Applied AI</span>
+                        <h3>How mid-sized teams are rewriting their workflow around one AI model</h3>
+                        <span class="news-meta">14 min read · Human Reviewed</span>
+                    </div>
+                </a>
+
+                <a href="future-living.html" class="news-card">
+                    <div class="news-thumb news-thumb-amber">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 28L32 12l20 16v24a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V28z"/>
+                            <path d="M26 52V36h12v16"/>
+                        </svg>
+                    </div>
+                    <div class="news-body">
+                        <span class="news-kicker">Future Living</span>
+                        <h3>Matter 2.0 is finally the smart-home standard we were promised</h3>
+                        <span class="news-meta">9 min read</span>
+                    </div>
+                </a>
+
+                <a href="cybersecurity-checklist.html" class="news-card">
+                    <div class="news-thumb news-thumb-teal">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M32 8l18 6v14c0 12-8 22-18 26-10-4-18-14-18-26V14z"/>
+                            <path d="M24 32l6 6 12-12"/>
+                        </svg>
+                    </div>
+                    <div class="news-body">
+                        <span class="news-kicker">Digital Resilience</span>
+                        <h3>The 2026 personal cybersecurity checklist that respects your time</h3>
+                        <span class="news-meta">7 min read</span>
+                    </div>
+                </a>
+
+                <a href="creator-workflows.html" class="news-card">
+                    <div class="news-thumb news-thumb-rose">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="10" y="16" width="44" height="32" rx="4"/>
+                            <path d="M26 26l12 6-12 6z" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <div class="news-body">
+                        <span class="news-kicker">Creator Systems</span>
+                        <h3>Build a two-month content engine that doesn't burn you out</h3>
+                        <span class="news-meta">11 min read</span>
+                    </div>
+                </a>
+
+                <a href="human-ai-prompts.html" class="news-card">
+                    <div class="news-thumb news-thumb-violet">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 20h40v24H32l-10 8V44H12z"/>
+                            <path d="M22 32h20M22 26h14"/>
+                        </svg>
+                    </div>
+                    <div class="news-body">
+                        <span class="news-kicker">Prompt Library</span>
+                        <h3>The "Perfect Paragraph" prompt pattern that kills AI voice</h3>
+                        <span class="news-meta">5 min read</span>
+                    </div>
+                </a>
+
+                <a href="gemini-india-guide.html" class="news-card">
+                    <div class="news-thumb news-thumb-teal">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M32 10c-8 8-8 36 0 44c8-8 8-36 0-44z"/>
+                            <path d="M10 32h44M12 22c6 4 34 4 40 0M12 42c6-4 34-4 40 0"/>
+                        </svg>
+                    </div>
+                    <div class="news-body">
+                        <span class="news-kicker">AI Guide</span>
+                        <h3>Gemini in India: A practical 2026 guide for everyday users</h3>
+                        <span class="news-meta">10 min read</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Newsletter strip -->
+        <section class="newsletter" aria-labelledby="newsletter-title">
+            <div class="newsletter-inner">
+                <div class="newsletter-copy">
+                    <span class="section-kicker">The Dispatch · Fridays</span>
+                    <h2 id="newsletter-title">One short email. Five signals. No noise.</h2>
+                    <p>A weekly edit of the AI, creator and home-tech moves actually worth acting on.</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed ✓';">
+                    <label for="nl-email" class="visually-hidden">Email address</label>
+                    <input id="nl-email" type="email" placeholder="you@worksignal.com" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                © 2026 SignalBytes. Independent editorial technology publishing — AI workflows, creator systems, future living, digital safety.
+            </div>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="about.html">About</a>
+                <a href="editorial-policy.html">Editorial Policy</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </nav>
         </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="index.html" class="footer-brand">SignalBytes.in</a>
-        <p class="footer-copy">Premium editorial coverage for AI workflows, future living, digital safety, and creator systems.</p>
-      </div>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="editorial-policy.html">Editorial Policy</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="contact.html">Contact</a>
-      </div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite">
+        <div class="cookie-copy">
+            <strong>SignalBytes Privacy.</strong> We use minimal cookies to improve your reading experience. Accept means you agree under <strong>GDPR</strong> &amp; <strong>CPRA</strong>. <a href="privacy.html">Read policy</a>
+        </div>
+        <div class="cookie-actions">
+            <button class="btn" onclick="handleConsent('denied')">Reject</button>
+            <button class="btn primary" onclick="handleConsent('granted')">Accept All</button>
+        </div>
     </div>
-  </footer>
 
-  <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
