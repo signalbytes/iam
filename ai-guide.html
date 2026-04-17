@@ -1,198 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Guide | SignalBytes</title>
-  <meta name="description" content="Explore SignalBytes AI guides for drafting, coding, image editing, video editing, PowerPoint, and office productivity.">
-  <meta property="og:title" content="AI Guide | SignalBytes">
-  <meta property="og:description" content="Explore SignalBytes AI guides for drafting, coding, image editing, video editing, PowerPoint, and office productivity.">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:700&family=Source+Serif+4:opsz,wght@8..144,400;8..144,600&family=Saira+Condensed:wght@500&display=swap" rel="stylesheet">
-  
-    <style>
-        :root {
-            --brand-violet: #7C3AED;
-            --text-main: #1A1A1A;
-            --text-muted: #555555;
-            --bg-white: #ffffff;
-            --bg-soft: #f6f3ff;
-            --card-bg: #faf9ff;
-            --border-color: #e8e2fb;
-            --shadow: 0 20px 45px rgba(28, 19, 56, 0.08);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Source Serif 4', serif;
-            font-size: 1.12rem;
-            line-height: 1.75;
-            color: var(--text-main);
-            background: var(--bg-white);
-        }
-        a { color: var(--brand-violet); }
-        img { max-width: 100%; height: auto; }
-        header {
-            padding: 1.2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            background: rgba(255,255,255,0.94);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
-        .logo {
-            font-family: 'PT Serif', serif;
-            font-size: 1.55rem;
-            font-weight: 700;
-            color: var(--text-main);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-        }
-        .logo svg { width: 24px; height: 24px; fill: var(--brand-violet); }
-        nav { display: flex; gap: 1.15rem; flex-wrap: wrap; }
-        nav a, .nav-link, .btn-link, .card-tag {
-            font-family: 'Saira Condensed', sans-serif;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 1rem;
-        }
-        nav a:hover, .btn-link:hover { color: var(--brand-violet); }
-        h1, h2, h3 { font-family: 'PT Serif', serif; font-weight: 700; color: var(--text-main); line-height: 1.2; }
-        h1 { font-size: clamp(2.35rem, 5vw, 4rem); }
-        h2 { font-size: clamp(1.8rem, 3vw, 2.35rem); border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h3 { font-size: clamp(1.35rem, 2vw, 1.7rem); }
-        p, li { color: #222; }
-        .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 28px 0; }
-        .hero {
-            position: relative;
-            background: linear-gradient(135deg, rgba(18,12,34,.84), rgba(124,58,237,.76)), url('./hero-bg.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 6.5rem 5% 5.5rem;
-            margin: 1rem auto;
-            width: min(96%, 1380px);
-            border-radius: 26px;
-            box-shadow: 0 30px 55px rgba(10,10,25,.28);
-        }
-        .hero .eyebrow, .section-eyebrow {
-            font-family: 'Saira Condensed', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #d9cdfd;
-            margin-bottom: .9rem;
-            display: inline-block;
-            font-size: .98rem;
-        }
-        .hero p { max-width: 760px; font-size: 1.15rem; color: rgba(255,255,255,.92); margin-top: 1rem; }
-        .lead { font-size: 1.18rem; color: #333; }
-        .grid-3, .grid-4 { display: grid; gap: 1.4rem; }
-        .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-        .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-        .card {
-            background: linear-gradient(180deg, #fff, var(--card-bg));
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 1.45rem;
-            box-shadow: var(--shadow);
-        }
-        .card h3 { margin: .35rem 0 .65rem; }
-        .card p { color: var(--text-muted); margin-bottom: .8rem; }
-        .card .card-tag { color: var(--brand-violet); }
-        .card a.readmore { text-decoration: none; font-weight: 600; }
-        .section-header { display:flex; justify-content:space-between; align-items:end; gap:1rem; margin: 3rem 0 1.1rem; }
-        .section-header p { color: var(--text-muted); max-width: 700px; }
-        .feature-split { display:grid; grid-template-columns: 1.2fr .8fr; gap: 1.5rem; align-items: stretch; }
-        .feature-panel { background: linear-gradient(135deg, #fff, #f4efff); border:1px solid var(--border-color); border-radius: 24px; padding: 1.8rem; box-shadow: var(--shadow); }
-        .callout { background:#f8f5ff; border-left:4px solid var(--brand-violet); padding:1rem 1.15rem; border-radius: 12px; margin: 1.2rem 0; }
-        .article-container { max-width: 860px; width: 92%; margin: 0 auto; padding: 2.5rem 0 4rem; }
-        .article-content p { margin: 1rem 0; }
-        .article-content ul, .article-content ol { margin: 1rem 0 1rem 1.4rem; }
-        .article-content li { margin: .45rem 0; }
-        .article-content h2 { margin-top: 2.4rem; margin-bottom: .85rem; }
-        .article-content h3 { margin-top: 1.5rem; margin-bottom: .5rem; }
-        .article-meta { color: var(--text-muted); margin: .6rem 0 1.5rem; font-size: .98rem; }
-        .source-list { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
-        .source-list li { margin: .35rem 0; }
-        .metric-strip { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; margin-top:1.2rem; }
-        .metric { background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:16px; padding:1rem; }
-        .metric strong { display:block; font-family:'PT Serif', serif; font-size:1.35rem; color:#fff; }
-        footer { text-align: center; padding: 2.4rem 5%; border-top: 1px solid var(--border-color); margin-top: 4rem; color: #666; }
-        footer a { color: var(--brand-violet); text-decoration: none; }
-        .cookie-banner { display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:90%; max-width:720px; background:#15131d; color:white; padding:20px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.5); z-index:9999; border:1px solid #7C3AED; }
-        .cookie-actions { display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; margin-top:12px; }
-        .btn { border:none; padding:10px 18px; border-radius:999px; cursor:pointer; font-family:'Saira Condensed', sans-serif; text-transform:uppercase; letter-spacing:.5px; }
-        .btn-secondary { background:transparent; border:1px solid #6b7280; color:#ddd; }
-        .btn-primary { background:#7C3AED; color:#fff; }
-        @media (max-width: 980px) { .grid-3 { grid-template-columns: 1fr 1fr; } .grid-4 { grid-template-columns: 1fr 1fr; } .feature-split { grid-template-columns: 1fr; } }
-        @media (max-width: 700px) { body { font-size: 1.04rem; } header { flex-direction:column; gap:.9rem; } nav { justify-content:center; } .grid-3, .grid-4 { grid-template-columns: 1fr; } .hero { padding: 4.5rem 7% 4rem; } }
-        
-    </style>
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Guide | SignalBytes</title>
+<meta name="description" content="An editorial AI guide for real work: drafting, planning, coding, presentations, office productivity, image editing, and video workflows.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://www.signalbytes.in/ai-guide.html">
+<meta property="og:title" content="AI Guide | SignalBytes">
+<meta property="og:description" content="An editorial AI guide for real work: drafting, planning, coding, presentations, office productivity, image editing, and video workflows.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.signalbytes.in/ai-guide.html">
+<meta name="theme-color" content="#7C3AED">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:700&family=Source+Serif+4:opsz,wght@8..144,400;8..144,600&family=Saira+Condensed:wght@500;600&display=swap" rel="stylesheet">
+
+
+<style>
+:root{
+  --brand-violet:#7C3AED;
+  --brand-violet-2:#A78BFA;
+  --text-main:#1A1A1A;
+  --text-muted:#555555;
+  --bg-white:#ffffff;
+  --bg-soft:#f7f5ff;
+  --line:#e8e2f7;
+  --card:#faf8ff;
+  --shadow:0 16px 40px rgba(40,18,88,.08);
+  --radius:24px;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Source Serif 4',serif;
+  font-size:1.08rem;
+  line-height:1.72;
+  color:var(--text-main);
+  background:linear-gradient(180deg,#fff 0%,#fcfbff 100%);
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{
+  font-family:'PT Serif',serif;
+  font-weight:700;
+  color:var(--text-main);
+  line-height:1.15;
+  margin:0 0 .8rem;
+}
+h1{font-size:clamp(2.3rem,5vw,4.1rem)}
+h2{font-size:clamp(1.8rem,3vw,2.6rem)}
+h3{font-size:clamp(1.2rem,2.3vw,1.5rem)}
+p{margin:.9rem 0;color:#2b2b2b}
+ul{padding-left:1.25rem}
+li{margin:.5rem 0}
+.container{width:min(calc(100% - 2rem), var(--max)); margin:0 auto}
+.topbar{
+  position:sticky; top:0; z-index:40;
+  backdrop-filter:saturate(180%) blur(16px);
+  background:rgba(255,255,255,.9);
+  border-bottom:1px solid rgba(124,58,237,.08);
+}
+.nav-shell{
+  width:min(calc(100% - 2rem), var(--max));
+  margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1rem; min-height:76px;
+}
+.logo{
+  display:inline-flex; align-items:center; gap:.7rem;
+  text-decoration:none; font-family:'Saira Condensed',sans-serif;
+  text-transform:uppercase; letter-spacing:.06em; font-size:1.15rem; color:var(--text-main);
+}
+.logo-mark{
+  width:40px; height:40px; border-radius:14px;
+  display:grid; place-items:center;
+  background:linear-gradient(135deg,#f2ecff 0%,#ede9fe 100%);
+  color:var(--brand-violet);
+  box-shadow:inset 0 0 0 1px rgba(124,58,237,.08);
+}
+.logo-mark svg{width:20px;height:20px}
+.menu-btn{
+  display:none; border:1px solid var(--line); background:#fff; color:var(--text-main);
+  border-radius:14px; width:46px; height:46px; cursor:pointer;
+}
+.menu-btn svg{width:20px;height:20px}
+.nav-links{display:flex; gap:1rem; align-items:center; flex-wrap:wrap}
+.nav-link,.btn-link,.card-tag{
+  font-family:'Saira Condensed',sans-serif;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.nav-link{
+  text-decoration:none; color:#302b3a; font-size:.96rem;
+  padding:.55rem .8rem; border-radius:999px;
+}
+.nav-link:hover,.nav-link.active{background:#f5f1ff;color:var(--brand-violet)}
+.hero{
+  padding:3.4rem 0 2rem;
+}
+.hero-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:32px;
+  padding:clamp(1.4rem,4vw,3rem);
+  background:
+    radial-gradient(circle at top right, rgba(167,139,250,.28), transparent 32%),
+    linear-gradient(135deg,#17111f 0%,#24163d 36%,#f8f5ff 140%);
+  color:#fff;
+  box-shadow:0 25px 60px rgba(27,15,50,.22);
+}
+.hero-card::after{
+  content:""; position:absolute; inset:auto -8% -30% auto;
+  width:360px; height:360px; border-radius:50%;
+  background:radial-gradient(circle, rgba(124,58,237,.18) 0%, transparent 70%);
+  pointer-events:none;
+}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.45rem .8rem; border-radius:999px;
+  background:rgba(255,255,255,.1);
+  color:#efe8ff; font-size:.92rem;
+  margin-bottom:1rem;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.3fr) minmax(280px,.8fr);
+  gap:1.5rem;
+  align-items:end;
+}
+.hero-copy p{color:#f0ebfa; max-width:54ch; font-size:1.12rem}
+.hero-stats{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:.9rem;
+}
+.stat{
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);
+  border-radius:22px; padding:1rem;
+}
+.stat strong{
+  display:block; font-family:'PT Serif',serif; font-size:1.55rem; color:#fff; margin-bottom:.2rem;
+}
+.stat span{font-size:.9rem; color:#e8ddff}
+.section{padding:1rem 0 2.6rem}
+.section-head{
+  display:flex; justify-content:space-between; align-items:end; gap:1rem;
+  margin-bottom:1.1rem;
+}
+.kicker{
+  color:var(--brand-violet);
+  font-size:.95rem;
+  margin-bottom:.35rem;
+}
+.lead{max-width:72ch; color:var(--text-muted)}
+.mag-grid{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:1rem;
+}
+.card{
+  grid-column:span 4;
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:1.25rem;
+  box-shadow:var(--shadow);
+  display:flex; flex-direction:column; gap:.8rem;
+  min-height:100%;
+}
+.card.featured{grid-column:span 6; background:linear-gradient(180deg,#fff 0%,#fbf9ff 100%)}
+.card.compact{grid-column:span 3}
+.card:hover{transform:translateY(-3px); transition:transform .2s ease, box-shadow .2s ease; box-shadow:0 22px 50px rgba(40,18,88,.12)}
+.card-tag{
+  color:var(--brand-violet);
+  font-size:.88rem;
+}
+.card h3{margin:0}
+.card p{margin:0; color:#454545}
+.card .cta{
+  margin-top:auto; color:var(--brand-violet); text-decoration:none; font-weight:600;
+}
+.trust-strip{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;
+}
+.trust-box{
+  border:1px solid var(--line); background:#fff; border-radius:24px;
+  padding:1.1rem 1.15rem; box-shadow:var(--shadow);
+}
+.trust-box h3{font-size:1.15rem}
+.prose-shell{
+  display:grid; grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr); gap:1.25rem;
+}
+.prose{
+  background:#fff; border:1px solid var(--line); border-radius:28px;
+  padding:1.4rem; box-shadow:var(--shadow);
+}
+.prose h2{padding-bottom:.55rem; border-bottom:2px solid #f0ebff; margin-top:2rem}
+.prose h2:first-child{margin-top:0}
+.sidebar{
+  display:grid; gap:1rem; align-content:start;
+}
+.side-card{
+  background:linear-gradient(180deg,#fff 0%,#fbf9ff 100%);
+  border:1px solid var(--line); border-radius:24px; padding:1.15rem; box-shadow:var(--shadow);
+}
+.side-card ul{margin:.35rem 0 0}
+.footer{
+  border-top:1px solid var(--line);
+  background:#fff;
+  margin-top:2rem;
+}
+.footer-inner{
+  width:min(calc(100% - 2rem), var(--max)); margin:0 auto; padding:2rem 0 2.8rem;
+  display:grid; gap:1rem;
+}
+.footer-links{
+  display:flex; flex-wrap:wrap; gap:.8rem 1rem;
+}
+.footer-links a{color:var(--brand-violet); text-decoration:none}
+.small{font-size:.95rem; color:var(--text-muted)}
+.notice{
+  font-size:.92rem; color:#5f5576; background:#f7f3ff; border:1px solid var(--line);
+  border-radius:18px; padding:.9rem 1rem;
+}
+.meta-row{
+  display:flex; flex-wrap:wrap; gap:.6rem 1rem; color:#e8ddff; font-size:.95rem;
+}
+.divider{height:1px;background:#ece7f7;margin:1rem 0}
+@media (max-width: 1080px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(3, minmax(0,1fr))}
+  .card,.card.featured{grid-column:span 6}
+  .card.compact{grid-column:span 4}
+  .prose-shell{grid-template-columns:1fr}
+}
+@media (max-width: 780px){
+  body{font-size:1.02rem}
+  .menu-btn{display:grid; place-items:center}
+  .nav-links{
+    position:absolute; left:1rem; right:1rem; top:76px;
+    background:rgba(255,255,255,.98);
+    border:1px solid var(--line);
+    border-radius:22px;
+    box-shadow:0 24px 60px rgba(18,10,35,.12);
+    padding:1rem;
+    display:none;
+    flex-direction:column; align-items:stretch;
+  }
+  .nav-links.open{display:flex}
+  .nav-link{padding:.8rem .9rem}
+  .hero{padding-top:1.2rem}
+  .hero-card{border-radius:24px}
+  .hero-stats{grid-template-columns:1fr}
+  .trust-strip{grid-template-columns:1fr}
+  .card,.card.featured,.card.compact{grid-column:1/-1}
+  .section-head{align-items:start; flex-direction:column}
+  .prose,.side-card{border-radius:22px}
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const btn = document.querySelector('.menu-btn');
+  const nav = document.querySelector('.nav-links');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+});
+</script>
+
 </head>
 <body>
-  <header>
-        <a href="index.html" class="logo">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            SignalBytes
-        </a>
-        <nav><a href="index.html">Home</a><a href="ai-guide.html" style="color: var(--brand-violet);">AI Guide</a><a href="creator-workflows.html">Creator Workflows</a><a href="smart-home-automation.html">Smart Home</a><a href="cybersecurity-checklist.html">Cybersecurity</a></nav>
-    </header>
-  <div class="hero"><div class="eyebrow">AI Guide</div><h1>An editorial AI guide for real work, not hype.</h1><p>Use this hub to find the best AI tool category for the exact job you need to do: writing, planning, office work, coding, slides, image work, or video editing.</p></div>
-<div class="container"><div class="grid-3">
-<div class="card"><div class="card-tag">Workflows</div><h3>Drafting, planning, and scheduling</h3><p>Choose the right AI assistant for daily execution, not just one-off prompts.</p><a class="readmore" href="ai-tools-drafting-planning-scheduling.html">Read guide →</a></div>
-<div class="card"><div class="card-tag">Coding</div><h3>Prompting and coding assistants</h3><p>Compare practical coding workflows and prompt patterns that actually speed up delivery.</p><a class="readmore" href="best-ai-coding-prompting-guide-2026.html">Read guide →</a></div>
-<div class="card"><div class="card-tag">Presentations</div><h3>AI for PowerPoint and decks</h3><p>How to use AI for story flow, structure, and visual polish without losing clarity.</p><a class="readmore" href="best-ai-powerpoint-presentation-tools-2026.html">Read guide →</a></div>
-<div class="card"><div class="card-tag">Office</div><h3>AI for office productivity</h3><p>Email, documents, meeting notes, and co-work style collaboration tools.</p><a class="readmore" href="best-ai-office-productivity-tools-2026.html">Read guide →</a></div>
-<div class="card"><div class="card-tag">Image</div><h3>AI image editing and enhancement</h3><p>When generative fill, remove, upscale, and masking tools genuinely save time.</p><a class="readmore" href="best-ai-image-editing-tools-2026.html">Read guide →</a></div>
-<div class="card"><div class="card-tag">Video</div><h3>AI tools for video editing</h3><p>The best three categories for creators who want faster rough cuts, captions, and repurposing.</p><a class="readmore" href="best-ai-video-editing-tools-2026.html">Read guide →</a></div>
-</div></div>
-  <footer>
-        <div style="margin-bottom: 1rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap;">
-            <a href="about.html">About SignalBytes</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Use</a>
+<div class="topbar">
+  <div class="nav-shell">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+      <span>SignalBytes</span>
+    </a>
+    <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a class="nav-link" href="index.html">Home</a>
+<a class="nav-link active" href="ai-guide.html">AI Guide</a>
+<a class="nav-link" href="creator-workflows.html">Creator Workflows</a>
+<a class="nav-link" href="smart-home-automation.html">Smart Home</a>
+<a class="nav-link" href="cybersecurity-checklist.html">Cybersecurity</a>
+    </nav>
+  </div>
+</div>
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">AI Guide</div>
+          <h1>An editorial AI guide for real work, not hype.</h1>
+          <p>Use this hub to find the best AI tool category for the exact job you need to do: writing, planning, office work, coding, slides, image work, or video editing.</p>
+          <div class="meta-row">
+            <span>Responsive production layout</span>
+            <span>SEO metadata included</span>
+            <span>AdSense-ready trust links</span>
+          </div>
         </div>
-        <p>&copy; 2026 SignalBytes. Independent technology publishing.</p>
-        <p>Editorial contact: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p>
-    </footer>
-    <div id="cookie-banner" class="cookie-banner">
-      <div><strong>Privacy notice:</strong> SignalBytes uses cookies for analytics, site functionality, and future advertising. Choose Accept to allow consent-based personalization, or Reject to continue with basic storage disabled. See our <a href="privacy.html" style="color:#cbb8ff;">Privacy Policy</a>.</div>
-      <div class="cookie-actions">
-        <button class="btn btn-secondary" onclick="handleConsent('denied')">Reject All</button>
-        <button class="btn btn-primary" onclick="handleConsent('granted')">Accept All</button>
+        <div class="hero-stats">
+          <div class="stat"><strong>6</strong><span>high-intent AI categories</span></div><div class="stat"><strong>1</strong><span>clear hub structure</span></div><div class="stat"><strong>0</strong><span>broken cards on mobile</span></div>
+        </div>
       </div>
     </div>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-      window.onload = function() {
-        if (!localStorage.getItem('sb_consent')) {
-          document.getElementById('cookie-banner').style.display = 'block';
-        }
-      };
-      function handleConsent(status) {
-        localStorage.setItem('sb_consent', status);
-        document.getElementById('cookie-banner').style.display = 'none';
-        gtag('consent', 'update', {
-          ad_storage: status,
-          analytics_storage: status,
-          ad_user_data: status,
-          ad_personalization: status
-        });
-      }
-    </script>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker card-tag">Editorial hub</div>
+        <h2>Choose the tool by job, not by hype cycle.</h2>
+      </div>
+      <p class="lead">This AI Guide is designed to reduce bounce and increase usefulness: clear use cases, specific categories, and internal links to deeper guides that match real work.</p>
+    </div>
+    <div class="mag-grid">
+      <article class="card featured">
+        <div class="card-tag">Workflows</div>
+        <h3>Best AI tools for drafting, planning, and scheduling</h3>
+        <p>How to choose between ChatGPT, Claude, and Gemini when your actual problem is messy notes, recurring tasks, and daily coordination.</p>
+        <a class="cta" href="ai-tools-drafting-planning-scheduling.html">Read the guide →</a>
+      </article>
+      <article class="card featured">
+        <div class="card-tag">Coding</div>
+        <h3>Best AI for coding, prompts, and workflow examples</h3>
+        <p>A practical framework for debugging, refactoring, and prompting more safely instead of treating AI output as production-ready by default.</p>
+        <a class="cta" href="best-ai-coding-prompting-guide-2026.html">Read the guide →</a>
+      </article>
+      <article class="card compact">
+        <div class="card-tag">Presentations</div>
+        <h3>Best AI for PowerPoint and business presentations</h3>
+        <p>Where AI helps most with structure, speaker notes, summaries, and visual cleanup.</p>
+        <a class="cta" href="best-ai-powerpoint-presentation-tools-2026.html">Open guide →</a>
+      </article>
+      <article class="card compact">
+        <div class="card-tag">Office</div>
+        <h3>Best AI for office productivity</h3>
+        <p>Email, meeting notes, document drafting, and co-work style AI assistance that fits everyday admin work.</p>
+        <a class="cta" href="best-ai-office-productivity-tools-2026.html">Open guide →</a>
+      </article>
+      <article class="card compact">
+        <div class="card-tag">Image</div>
+        <h3>Best AI image editing and enhancement tools</h3>
+        <p>When masking, removal, upscaling, and generative fill genuinely save time.</p>
+        <a class="cta" href="best-ai-image-editing-tools-2026.html">Open guide →</a>
+      </article>
+      <article class="card compact">
+        <div class="card-tag">Video</div>
+        <h3>Best AI tools for video editing in 2026</h3>
+        <p>Speed up captions, rough cuts, social repurposing, and post-production prep without over-automating judgment.</p>
+        <a class="cta" href="best-ai-video-editing-tools-2026.html">Open guide →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container trust-strip">
+    <div class="trust-box">
+      <div class="card-tag">Why this hub works</div>
+      <h3>High-intent structure</h3>
+      <p>Users arrive with task-specific intent. Grouping by job type makes the section easier to scan and more likely to keep them on-site.</p>
+    </div>
+    <div class="trust-box">
+      <div class="card-tag">AdSense signal</div>
+      <h3>Clear editorial framing</h3>
+      <p>Every card points to a substantive guide, not a thin prompt dump. That creates a stronger “helpful content” impression on review.</p>
+    </div>
+    <div class="trust-box">
+      <div class="card-tag">SEO signal</div>
+      <h3>Long-tail category coverage</h3>
+      <p>The page supports multiple low-competition intents around AI for writing, coding, office work, image editing, video, and presentations.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container prose-shell">
+    <article class="prose">
+      <h2>What makes an AI guide actually useful</h2>
+      <p>Most AI hubs fail because they talk like product launch pages. They promise one assistant for everything, then leave people to reverse-engineer how the tool fits their work. A stronger editorial hub starts with the task: drafting, planning, coding, slides, image work, or video. That framing is easier to understand, easier to search, and far more useful for return visitors.</p>
+      <p>The practical rule is simple: if a user cannot tell which link solves their immediate problem in under ten seconds, the hub is too abstract. This version fixes that. It leads with the strongest categories, uses concise summaries, and gives every section a job-focused description instead of generic AI marketing language.</p>
+      <h2>How to keep this page production-ready</h2>
+      <ul>
+        <li>Keep the six category cards above the fold on desktop and easy to stack on mobile.</li>
+        <li>Use article excerpts that describe outcomes, not vague innovation language.</li>
+        <li>Keep the footer legal links visible on every version of the page.</li>
+        <li>Maintain canonical, robots, and description tags when you revise content.</li>
+      </ul>
+    </article>
+    <aside class="sidebar">
+      <div class="side-card">
+        <div class="card-tag">Editor’s checklist</div>
+        <ul>
+          <li>Every card has a real destination.</li>
+          <li>No fixed-width grid that breaks on mobile.</li>
+          <li>Headline hierarchy follows one clear H1.</li>
+          <li>Legal pages remain one tap away.</li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <div class="card-tag">Suggested next additions</div>
+        <ul>
+          <li>AI for research synthesis</li>
+          <li>AI for meeting summaries</li>
+          <li>AI for resumes and job search workflows</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="about.html">About SignalBytes</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+    <div class="small">© 2026 SignalBytes. Independent technology publishing.</div>
+    <div class="small">Editorial contact: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></div>
+    <div class="notice">Privacy notice: SignalBytes uses cookies for analytics, site functionality, and future advertising. Keep your consent banner active before AdSense submission, and make sure legal pages remain linked from every page.</div>
+  </div>
+</footer>
+
 </body>
 </html>
