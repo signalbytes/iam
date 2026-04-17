@@ -1,153 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | SignalBytes</title>
-    <meta name="description" content="Learn about SignalBytes, our E-E-A-T principles, and our mission to translate complex Enterprise IT concepts into actionable signals.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About SignalBytes</title>
+  <meta name="description" content="Learn who runs SignalBytes, how the site approaches human-reviewed technology guidance, and why the editorial process is built around practical value.">
+  <meta property="og:title" content="About SignalBytes">
+  <meta property="og:description" content="Learn who runs SignalBytes, how the site approaches human-reviewed technology guidance, and why the editorial process is built around practical value.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:700&family=Source+Serif+4:opsz,wght@8..144,400;8..144,600&family=Saira+Condensed:wght@500&display=swap" rel="stylesheet">
+  
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #1A1A1A;
-            --accent-color: #7C3AED;
-            --card-bg: #f8f9fa;
-            --border-color: #e5e7eb;
+            --brand-violet: #7C3AED;
+            --text-main: #1A1A1A;
+            --text-muted: #555555;
+            --bg-white: #ffffff;
+            --bg-soft: #f6f3ff;
+            --card-bg: #faf9ff;
+            --border-color: #e8e2fb;
+            --shadow: 0 20px 45px rgba(28, 19, 56, 0.08);
         }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.12rem;
+            line-height: 1.75;
+            color: var(--text-main);
+            background: var(--bg-white);
         }
+        a { color: var(--brand-violet); }
+        img { max-width: 100%; height: auto; }
         header {
-            padding: 1.5rem 5%;
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.94);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
         }
         .logo {
-            font-size: 1.5rem;
+            font-family: 'PT Serif', serif;
+            font-size: 1.55rem;
             font-weight: 700;
-            color: var(--text-color);
+            color: var(--text-main);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: .5rem;
         }
-        .logo svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--accent-color);
-        }
-        nav {
-            display: flex;
-            gap: 1.5rem;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
+        .logo svg { width: 24px; height: 24px; fill: var(--brand-violet); }
+        nav { display: flex; gap: 1.15rem; flex-wrap: wrap; }
+        nav a, .nav-link, .btn-link, .card-tag {
+            font-family: 'Saira Condensed', sans-serif;
             font-weight: 500;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: var(--accent-color);
-        }
-        .container {
-            padding: 4rem 5%;
-            max-width: 800px;
-            margin: 0 auto;
-            min-height: 60vh;
-        }
-        .page-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--text-color);
-        }
-        .content-section {
-            margin-bottom: 2rem;
-        }
-        .content-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-        .content-section p {
-            margin-bottom: 1.25rem;
-            font-size: 1.1rem;
-            color: #444;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 5%;
-            border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
-            color: #666;
-        }
-        footer a {
-            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: .5px;
             text-decoration: none;
+            color: var(--text-main);
+            font-size: 1rem;
         }
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .page-title {
-                font-size: 2rem;
-            }
+        nav a:hover, .btn-link:hover { color: var(--brand-violet); }
+        h1, h2, h3 { font-family: 'PT Serif', serif; font-weight: 700; color: var(--text-main); line-height: 1.2; }
+        h1 { font-size: clamp(2.35rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.8rem, 3vw, 2.35rem); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h3 { font-size: clamp(1.35rem, 2vw, 1.7rem); }
+        p, li { color: #222; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 28px 0; }
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(18,12,34,.84), rgba(124,58,237,.76)), url('./hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6.5rem 5% 5.5rem;
+            margin: 1rem auto;
+            width: min(96%, 1380px);
+            border-radius: 26px;
+            box-shadow: 0 30px 55px rgba(10,10,25,.28);
         }
+        .hero .eyebrow, .section-eyebrow {
+            font-family: 'Saira Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d9cdfd;
+            margin-bottom: .9rem;
+            display: inline-block;
+            font-size: .98rem;
+        }
+        .hero p { max-width: 760px; font-size: 1.15rem; color: rgba(255,255,255,.92); margin-top: 1rem; }
+        .lead { font-size: 1.18rem; color: #333; }
+        .grid-3, .grid-4 { display: grid; gap: 1.4rem; }
+        .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .card {
+            background: linear-gradient(180deg, #fff, var(--card-bg));
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.45rem;
+            box-shadow: var(--shadow);
+        }
+        .card h3 { margin: .35rem 0 .65rem; }
+        .card p { color: var(--text-muted); margin-bottom: .8rem; }
+        .card .card-tag { color: var(--brand-violet); }
+        .card a.readmore { text-decoration: none; font-weight: 600; }
+        .section-header { display:flex; justify-content:space-between; align-items:end; gap:1rem; margin: 3rem 0 1.1rem; }
+        .section-header p { color: var(--text-muted); max-width: 700px; }
+        .feature-split { display:grid; grid-template-columns: 1.2fr .8fr; gap: 1.5rem; align-items: stretch; }
+        .feature-panel { background: linear-gradient(135deg, #fff, #f4efff); border:1px solid var(--border-color); border-radius: 24px; padding: 1.8rem; box-shadow: var(--shadow); }
+        .callout { background:#f8f5ff; border-left:4px solid var(--brand-violet); padding:1rem 1.15rem; border-radius: 12px; margin: 1.2rem 0; }
+        .article-container { max-width: 860px; width: 92%; margin: 0 auto; padding: 2.5rem 0 4rem; }
+        .article-content p { margin: 1rem 0; }
+        .article-content ul, .article-content ol { margin: 1rem 0 1rem 1.4rem; }
+        .article-content li { margin: .45rem 0; }
+        .article-content h2 { margin-top: 2.4rem; margin-bottom: .85rem; }
+        .article-content h3 { margin-top: 1.5rem; margin-bottom: .5rem; }
+        .article-meta { color: var(--text-muted); margin: .6rem 0 1.5rem; font-size: .98rem; }
+        .source-list { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+        .source-list li { margin: .35rem 0; }
+        .metric-strip { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; margin-top:1.2rem; }
+        .metric { background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:16px; padding:1rem; }
+        .metric strong { display:block; font-family:'PT Serif', serif; font-size:1.35rem; color:#fff; }
+        footer { text-align: center; padding: 2.4rem 5%; border-top: 1px solid var(--border-color); margin-top: 4rem; color: #666; }
+        footer a { color: var(--brand-violet); text-decoration: none; }
+        .cookie-banner { display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:90%; max-width:720px; background:#15131d; color:white; padding:20px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.5); z-index:9999; border:1px solid #7C3AED; }
+        .cookie-actions { display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; margin-top:12px; }
+        .btn { border:none; padding:10px 18px; border-radius:999px; cursor:pointer; font-family:'Saira Condensed', sans-serif; text-transform:uppercase; letter-spacing:.5px; }
+        .btn-secondary { background:transparent; border:1px solid #6b7280; color:#ddd; }
+        .btn-primary { background:#7C3AED; color:#fff; }
+        @media (max-width: 980px) { .grid-3 { grid-template-columns: 1fr 1fr; } .grid-4 { grid-template-columns: 1fr 1fr; } .feature-split { grid-template-columns: 1fr; } }
+        @media (max-width: 700px) { body { font-size: 1.04rem; } header { flex-direction:column; gap:.9rem; } nav { justify-content:center; } .grid-3, .grid-4 { grid-template-columns: 1fr; } .hero { padding: 4.5rem 7% 4rem; } }
+        
     </style>
+    
 </head>
 <body>
-
-    <header>
+  <header>
         <a href="index.html" class="logo">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             SignalBytes
         </a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="ai-guide.html">AI Guide</a>
-            <a href="smart-home-automation.html">Smart Home</a>
-            <a href="cybersecurity-checklist.html">Cybersecurity</a>
-            <a href="human-ai-prompts.html">AI Prompts</a>
-        </nav>
+        <nav><a href="index.html">Home</a><a href="ai-guide.html">AI Guide</a><a href="creator-workflows.html">Creator Workflows</a><a href="smart-home-automation.html">Smart Home</a><a href="cybersecurity-checklist.html">Cybersecurity</a></nav>
     </header>
-
-    <div class="container">
-        <h1 class="page-title">About SignalBytes</h1>
-        <div class="content-section">
-            <p>SignalBytes is an independent editorial technology site founded and edited by Prerak Mehta. The publication translates complex AI, automation, productivity, cybersecurity, and consumer technology topics into practical guidance for everyday readers and working professionals.</p>
-            <p>Our focus is built on the core pillars of Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T). We believe in providing high-quality, reliable technical intelligence that empowers users to navigate the digital landscape safely and efficiently.</p>
-                    <div class="content-section" style="margin-top:2rem;">
-                <h2 style="margin-bottom:0.75rem;">Founder and Editor</h2>
-                <p><strong>Prerak Mehta</strong> is the founder and editor of SignalBytes. The editorial focus of the site is simple: explain useful technology clearly, test tools with a practical mindset, and publish guidance that helps readers make better decisions.</p>
-                <p>SignalBytes aims to be reader-first rather than hype-first. Articles are written to be understandable, specific, and genuinely useful, with clear disclosure when content is opinion, product guidance, or how-to analysis.</p>
-            </div>
-        </div>
-
-    <footer>
-        <div style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-            <a href="about.html">About Us</a>
+  <div class="hero"><div class="eyebrow">About SignalBytes</div><h1>Independent technology publishing, written for real people who need practical answers.</h1><p>SignalBytes is built as a magazine-style tech publication focused on AI tools, creator workflows, smart home systems, and everyday digital safety. The editorial promise is simple: explain useful technology in plain language, with testing logic, setup context, and realistic trade-offs.</p></div>
+<div class="article-container"><article class="article-content">
+<h2>Who runs SignalBytes</h2>
+<p><strong>Founder and Editor: Prerak Mehta.</strong> SignalBytes is independently published and edited by Prerak Mehta, a long-time technology professional with hands-on experience evaluating enterprise systems, workflows, tools, and operational risks. The site exists to translate that practical mindset into useful, consumer-friendly guidance.</p>
+<p>Rather than publishing trend-chasing summaries, SignalBytes focuses on human-reviewed recommendations: what a tool does well, where it breaks, who it is best for, and how to use it safely and efficiently.</p>
+<h2>What makes the advice credible</h2>
+<ul>
+<li>Articles are written around concrete user tasks, not generic keyword stuffing.</li>
+<li>Comparisons are framed by workflow fit, learning curve, cost, and privacy implications.</li>
+<li>Where relevant, SignalBytes links readers to original vendor or documentation sources for verification.</li>
+<li>Editorial updates are made when tools, features, or best practices materially change.</li>
+</ul>
+<h2>Editorial mission</h2>
+<p>SignalBytes aims to help readers make better technology decisions faster. That includes choosing an AI assistant for drafting, building a smart home without buying the wrong ecosystem, improving mobile photography, or setting up practical security habits that reduce real-world risk.</p>
+<div class="callout"><strong>Editorial standard:</strong> every guide should help a reader do something specific, save time, avoid a mistake, or understand a technology decision more clearly.</div>
+</article></div>
+  <footer>
+        <div style="margin-bottom: 1rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap;">
+            <a href="about.html">About SignalBytes</a>
             <a href="contact.html">Contact</a>
             <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
+            <a href="terms.html">Terms of Use</a>
         </div>
-        <p>&copy; 2026 SignalBytes. All rights reserved.</p>
-        <p>Contact us: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p>
+        <p>&copy; 2026 SignalBytes. Independent technology publishing.</p>
+        <p>Editorial contact: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p>
     </footer>
-
+    <div id="cookie-banner" class="cookie-banner">
+      <div><strong>Privacy notice:</strong> SignalBytes uses cookies for analytics, site functionality, and future advertising. Choose Accept to allow consent-based personalization, or Reject to continue with basic storage disabled. See our <a href="privacy.html" style="color:#cbb8ff;">Privacy Policy</a>.</div>
+      <div class="cookie-actions">
+        <button class="btn btn-secondary" onclick="handleConsent('denied')">Reject All</button>
+        <button class="btn btn-primary" onclick="handleConsent('granted')">Accept All</button>
+      </div>
+    </div>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      window.onload = function() {
+        if (!localStorage.getItem('sb_consent')) {
+          document.getElementById('cookie-banner').style.display = 'block';
+        }
+      };
+      function handleConsent(status) {
+        localStorage.setItem('sb_consent', status);
+        document.getElementById('cookie-banner').style.display = 'none';
+        gtag('consent', 'update', {
+          ad_storage: status,
+          analytics_storage: status,
+          ad_user_data: status,
+          ad_personalization: status
+        });
+      }
+    </script>
 </body>
 </html>

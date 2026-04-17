@@ -1,303 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignalBytes | AI & Tech Intelligence for Everyone</title>
-    <meta name="description" content="SignalBytes provides AI & Tech Intelligence for Everyone. Read guides on Gemini, Smart Home Automation, and Cybersecurity.">
-    <meta property="og:title" content="SignalBytes | AI & Tech Intelligence for Everyone">
-    <meta property="og:description" content="SignalBytes provides AI & Tech Intelligence for Everyone. Read guides on Gemini, Smart Home Automation, and Cybersecurity.">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignalBytes Header Template</title>
+  <meta name="description" content="Shared typography and navigation template for SignalBytes.">
+  <meta property="og:title" content="SignalBytes Header Template">
+  <meta property="og:description" content="Shared typography and navigation template for SignalBytes.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:700&family=Source+Serif+4:opsz,wght@8..144,400;8..144,600&family=Saira+Condensed:wght@500&display=swap" rel="stylesheet">
+  
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #1A1A1A;
-            --accent-color: #7C3AED;
-            --card-bg: #f8f9fa;
-            --border-color: #e5e7eb;
+            --brand-violet: #7C3AED;
+            --text-main: #1A1A1A;
+            --text-muted: #555555;
+            --bg-white: #ffffff;
+            --bg-soft: #f6f3ff;
+            --card-bg: #faf9ff;
+            --border-color: #e8e2fb;
+            --shadow: 0 20px 45px rgba(28, 19, 56, 0.08);
         }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.12rem;
+            line-height: 1.75;
+            color: var(--text-main);
+            background: var(--bg-white);
         }
+        a { color: var(--brand-violet); }
+        img { max-width: 100%; height: auto; }
         header {
-            padding: 1.5rem 5%;
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.94);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
         }
         .logo {
-            font-size: 1.5rem;
+            font-family: 'PT Serif', serif;
+            font-size: 1.55rem;
             font-weight: 700;
-            color: var(--text-color);
+            color: var(--text-main);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: .5rem;
         }
-        .logo svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--accent-color);
-        }
-        nav {
-            display: flex;
-            gap: 1.5rem;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
+        .logo svg { width: 24px; height: 24px; fill: var(--brand-violet); }
+        nav { display: flex; gap: 1.15rem; flex-wrap: wrap; }
+        nav a, .nav-link, .btn-link, .card-tag {
+            font-family: 'Saira Condensed', sans-serif;
             font-weight: 500;
-            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 1rem;
         }
-        nav a:hover {
-            color: var(--accent-color);
-        }
+        nav a:hover, .btn-link:hover { color: var(--brand-violet); }
+        h1, h2, h3 { font-family: 'PT Serif', serif; font-weight: 700; color: var(--text-main); line-height: 1.2; }
+        h1 { font-size: clamp(2.35rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.8rem, 3vw, 2.35rem); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h3 { font-size: clamp(1.35rem, 2vw, 1.7rem); }
+        p, li { color: #222; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 28px 0; }
         .hero {
             position: relative;
-            background: linear-gradient(rgba(12, 10, 20, 0.4), rgba(124, 58, 237, 0.3)), 
-                        url('./hero-bg.png');
+            background: linear-gradient(135deg, rgba(18,12,34,.84), rgba(124,58,237,.76)), url('./hero-bg.png');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax effect for that premium feel */
             color: white;
-            padding: 8rem 5%;
-            text-align: center;
-            border-radius: 1.5rem;
-            margin: 1rem 2%;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            padding: 6.5rem 5% 5.5rem;
+            margin: 1rem auto;
+            width: min(96%, 1380px);
+            border-radius: 26px;
+            box-shadow: 0 30px 55px rgba(10,10,25,.28);
         }
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        .hero .eyebrow, .section-eyebrow {
+            font-family: 'Saira Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d9cdfd;
+            margin-bottom: .9rem;
+            display: inline-block;
+            font-size: .98rem;
         }
-        .hero p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .container {
-            padding: 2rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto auto;
-            gap: 1.5rem;
-            grid-template-areas:
-                "card2 card2 card1 card3"
-                "card2 card2 card4 card4";
-        }
-        .bento-card {
-            background-color: var(--card-bg);
+        .hero p { max-width: 760px; font-size: 1.15rem; color: rgba(255,255,255,.92); margin-top: 1rem; }
+        .lead { font-size: 1.18rem; color: #333; }
+        .grid-3, .grid-4 { display: grid; gap: 1.4rem; }
+        .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .card {
+            background: linear-gradient(180deg, #fff, var(--card-bg));
             border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 2rem;
-            text-decoration: none;
-            color: var(--text-color);
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            border-radius: 20px;
+            padding: 1.45rem;
+            box-shadow: var(--shadow);
         }
-        .bento-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: var(--accent-color);
-        }
-        .bento-card svg {
-            width: 32px;
-            height: 32px;
-            color: var(--accent-color);
-        }
-        .bento-card h3 {
-            font-size: 1.5rem;
-        }
-        .card-1 { grid-area: card1; }
-        .card-2 { grid-area: card2; }
-        .card-3 { grid-area: card3; }
-        .card-4 { grid-area: card4; }
+        .card h3 { margin: .35rem 0 .65rem; }
+        .card p { color: var(--text-muted); margin-bottom: .8rem; }
+        .card .card-tag { color: var(--brand-violet); }
+        .card a.readmore { text-decoration: none; font-weight: 600; }
+        .section-header { display:flex; justify-content:space-between; align-items:end; gap:1rem; margin: 3rem 0 1.1rem; }
+        .section-header p { color: var(--text-muted); max-width: 700px; }
+        .feature-split { display:grid; grid-template-columns: 1.2fr .8fr; gap: 1.5rem; align-items: stretch; }
+        .feature-panel { background: linear-gradient(135deg, #fff, #f4efff); border:1px solid var(--border-color); border-radius: 24px; padding: 1.8rem; box-shadow: var(--shadow); }
+        .callout { background:#f8f5ff; border-left:4px solid var(--brand-violet); padding:1rem 1.15rem; border-radius: 12px; margin: 1.2rem 0; }
+        .article-container { max-width: 860px; width: 92%; margin: 0 auto; padding: 2.5rem 0 4rem; }
+        .article-content p { margin: 1rem 0; }
+        .article-content ul, .article-content ol { margin: 1rem 0 1rem 1.4rem; }
+        .article-content li { margin: .45rem 0; }
+        .article-content h2 { margin-top: 2.4rem; margin-bottom: .85rem; }
+        .article-content h3 { margin-top: 1.5rem; margin-bottom: .5rem; }
+        .article-meta { color: var(--text-muted); margin: .6rem 0 1.5rem; font-size: .98rem; }
+        .source-list { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+        .source-list li { margin: .35rem 0; }
+        .metric-strip { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; margin-top:1.2rem; }
+        .metric { background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:16px; padding:1rem; }
+        .metric strong { display:block; font-family:'PT Serif', serif; font-size:1.35rem; color:#fff; }
+        footer { text-align: center; padding: 2.4rem 5%; border-top: 1px solid var(--border-color); margin-top: 4rem; color: #666; }
+        footer a { color: var(--brand-violet); text-decoration: none; }
+        .cookie-banner { display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:90%; max-width:720px; background:#15131d; color:white; padding:20px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.5); z-index:9999; border:1px solid #7C3AED; }
+        .cookie-actions { display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; margin-top:12px; }
+        .btn { border:none; padding:10px 18px; border-radius:999px; cursor:pointer; font-family:'Saira Condensed', sans-serif; text-transform:uppercase; letter-spacing:.5px; }
+        .btn-secondary { background:transparent; border:1px solid #6b7280; color:#ddd; }
+        .btn-primary { background:#7C3AED; color:#fff; }
+        @media (max-width: 980px) { .grid-3 { grid-template-columns: 1fr 1fr; } .grid-4 { grid-template-columns: 1fr 1fr; } .feature-split { grid-template-columns: 1fr; } }
+        @media (max-width: 700px) { body { font-size: 1.04rem; } header { flex-direction:column; gap:.9rem; } nav { justify-content:center; } .grid-3, .grid-4 { grid-template-columns: 1fr; } .hero { padding: 4.5rem 7% 4rem; } }
         
-        .premium-card {
-            background: linear-gradient(135deg, #1A1A1A 0%, #2d1b4e 100%);
-            color: white !important;
-            border: 1px solid #7C3AED !important;
-            position: relative;
-            overflow: hidden;
-            justify-content: center;
-        }
-        .premium-card h3 {
-            font-size: 2.5rem !important;
-            color: white !important;
-            margin-bottom: 0.5rem;
-        }
-        .premium-card p {
-            font-size: 1.1rem;
-            color: #e5e7eb !important;
-        }
-        .premium-card svg {
-            width: 48px !important;
-            height: 48px !important;
-            color: #a78bfa !important;
-            margin-bottom: 1rem;
-        }
-        .premium-card::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-        .premium-card:hover::before {
-            opacity: 1;
-        }
-
-        .adsense-unit {
-            display: none; /* This hides the messy box from users */
-            margin: 2rem auto;
-            text-align: center;
-            /* Keep other styles below so you don't lose them */
-            padding: 20px;
-            background: #f8f9fa;
-            border: 1px dashed #e5e7eb;
-            border-radius: 8px;
-            color: #6b7280;
-            font-size: 0.875rem;
-        }
-
-        /* Premium Action Checklist Style */
-        .action-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-left: 6px solid #7C3AED; /* Your Electric Violet Brand Color */
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-        }
-
-        .action-card h3 {
-            margin-top: 0;
-            color: #1A1A1A;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-            color: #374151;
-            line-height: 1.4;
-        }
-
-        .checkbox-icon {
-            width: 22px;
-            height: 22px;
-            background: #f3f0ff;
-            border: 2px solid #7C3AED;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .checkbox-icon::after {
-            content: '';
-            width: 10px;
-            height: 6px;
-            border-left: 2px solid #7C3AED;
-            border-bottom: 2px solid #7C3AED;
-            transform: rotate(-45deg);
-            display: none; /* Change to 'block' if you want them pre-checked */
-        }
-
-        .action-card:hover {
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-            box-shadow: 0 20px 30px -10px rgba(124, 58, 237, 0.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 5%;
-            border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
-            color: #666;
-        }
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        @media (max-width: 900px) {
-            .bento-grid {
-                grid-template-columns: 1fr 1fr;
-                grid-template-areas:
-                    "card1 card1"
-                    "card2 card3"
-                    "card4 card4";
-            }
-        }
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .bento-grid {
-                grid-template-columns: 1fr;
-                grid-template-areas:
-                    "card1"
-                    "card2"
-                    "card3"
-                    "card4";
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
     </style>
+    
 </head>
 <body>
-
-    <header>
+  <header>
         <a href="index.html" class="logo">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             SignalBytes
         </a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="ai-guide.html">AI Guide</a>
-            <a href="smart-home-automation.html">Smart Home</a>
-            <a href="cybersecurity-checklist.html">Cybersecurity</a>
-            <a href="human-ai-prompts.html">AI Prompts</a>
-        </nav>
+        <nav><a href="index.html" style="color: var(--brand-violet);">Home</a><a href="ai-guide.html">AI Guide</a><a href="creator-workflows.html">Creator Workflows</a><a href="smart-home-automation.html">Smart Home</a><a href="cybersecurity-checklist.html">Cybersecurity</a></nav>
     </header>
+  <div class="container"><h1>SignalBytes master header</h1><p class="lead">This file captures the editorial typography, navigation, and trust styling used across the site.</p></div>
+  <footer>
+        <div style="margin-bottom: 1rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap;">
+            <a href="about.html">About SignalBytes</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+        </div>
+        <p>&copy; 2026 SignalBytes. Independent technology publishing.</p>
+        <p>Editorial contact: <a href="mailto:technodate3@gmail.com">technodate3@gmail.com</a></p>
+    </footer>
+    <div id="cookie-banner" class="cookie-banner">
+      <div><strong>Privacy notice:</strong> SignalBytes uses cookies for analytics, site functionality, and future advertising. Choose Accept to allow consent-based personalization, or Reject to continue with basic storage disabled. See our <a href="privacy.html" style="color:#cbb8ff;">Privacy Policy</a>.</div>
+      <div class="cookie-actions">
+        <button class="btn btn-secondary" onclick="handleConsent('denied')">Reject All</button>
+        <button class="btn btn-primary" onclick="handleConsent('granted')">Accept All</button>
+      </div>
+    </div>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      window.onload = function() {
+        if (!localStorage.getItem('sb_consent')) {
+          document.getElementById('cookie-banner').style.display = 'block';
+        }
+      };
+      function handleConsent(status) {
+        localStorage.setItem('sb_consent', status);
+        document.getElementById('cookie-banner').style.display = 'none';
+        gtag('consent', 'update', {
+          ad_storage: status,
+          analytics_storage: status,
+          ad_user_data: status,
+          ad_personalization: status
+        });
+      }
+    </script>
+</body>
+</html>
