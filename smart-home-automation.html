@@ -1,66 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Smart Home</title>
 
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=Source+Serif+4:opsz,wght@8..144,400;8..144,600&family=Saira+Condensed:wght@500&display=swap" rel="stylesheet">
-<style>
-body{font-family:'Source Serif 4',serif;margin:0;background:#f5f3f8;color:#1b1722}
-.container{max-width:1000px;margin:auto;padding:20px}
-.section-hero{
-  border-radius:24px;
-  padding:32px 36px 28px;
-  background:linear-gradient(135deg,#2c174c,#6f3ee0);
-  color:#fff;
-  margin-bottom:28px;
-}
-.section-hero-inner{max-width:720px}
-.section-hero h1{font-family:'PT Serif',serif;font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:12px}
-.section-hero p{font-size:0.98rem;opacity:.9}
-.article-list{display:grid;gap:18px}
-.article-card{display:flex;gap:16px;background:#fff;border-radius:16px;padding:12px;text-decoration:none;color:#000}
-.article-card img{width:140px;height:90px;object-fit:cover;border-radius:10px}
-@media(max-width:768px){
-  .section-hero{padding:22px 18px}
-  .section-hero h1{font-size:1.6rem}
-  .article-card img{width:100px;height:70px}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#7C3AED" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=Source+Serif+4:opsz,wght@8..144,400;8..144,600&family=Saira+Condensed:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f5f3f8;
+      --surface:#ffffff;
+      --surface-soft:#faf7ff;
+      --ink:#1a1a1a;
+      --muted:#5c5568;
+      --line:#e7dff0;
+      --brand:#7C3AED;
+      --brand-dark:#321652;
+      --hero-a:#2f1751;
+      --hero-b:#6f3ee0;
+      --shadow:0 18px 48px rgba(46,19,93,.08);
+      --radius:22px;
+      --max:1160px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:'Source Serif 4', serif;
+      line-height:1.7;
+    }
+    img{display:block; max-width:100%}
+    a{text-decoration:none; color:inherit}
+    .container{width:min(calc(100% - 32px), var(--max)); margin:0 auto}
+    .site-header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(245,243,248,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(231,223,240,.92);
+    }
+    .nav-shell{
+      min-height:86px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:16px;
+      min-width:0;
+    }
+    .brand-mark{
+      width:56px; height:56px; border-radius:18px;
+      display:grid; place-items:center;
+      font-family:'Saira Condensed', sans-serif;
+      font-size:30px; font-weight:600;
+      color:var(--brand);
+      background:linear-gradient(180deg,#f3edff,#ece3ff);
+      border:1px solid #ddd0f6;
+      box-shadow:inset 0 10px 25px rgba(124,58,237,.08);
+    }
+    .brand-text{
+      font-family:'Saira Condensed', sans-serif;
+      font-size:1.04rem; letter-spacing:1px; text-transform:uppercase;
+      font-weight:600; white-space:nowrap;
+    }
+    .nav-toggle{
+      display:none;
+      width:56px; height:56px; border-radius:18px;
+      border:1px solid var(--line); background:var(--surface);
+      box-shadow:var(--shadow); cursor:pointer;
+    }
+    .nav-toggle span{
+      display:block; width:22px; height:2px; background:var(--ink);
+      border-radius:999px; margin:5px auto;
+    }
+    .nav-menu{
+      display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+    }
+    .nav-link, .eyebrow, .meta-chip, .footer-link{
+      font-family:'Saira Condensed', sans-serif;
+      text-transform:uppercase; letter-spacing:.7px;
+    }
+    .nav-link{
+      color:#322b3d; font-size:.96rem;
+      padding:11px 16px; border-radius:999px;
+    }
+    .nav-link:hover, .nav-link.active{
+      background:#eadffd; color:var(--brand);
+    }
 
+    main{padding:26px 0 10px}
+    .section-hero{
+      border-radius:28px;
+      padding:28px 34px 24px;
+      background:
+        linear-gradient(135deg, rgba(31,16,58,.96), rgba(111,62,224,.88)),
+        var(--hero-image) center/cover no-repeat;
+      color:#fff;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      margin-bottom:26px;
+    }
+    .section-hero-inner{max-width:760px}
+    .eyebrow{
+      display:inline-flex; align-items:center; justify-content:center;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:.9rem;
+      margin-bottom:14px;
+    }
+    h1,h2,h3{
+      font-family:'PT Serif', serif;
+      margin:0;
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+    .section-hero h1{
+      font-size:clamp(1.95rem,3vw,2.65rem);
+      margin-bottom:10px;
+      max-width:16ch;
+    }
+    .section-hero p{
+      margin:0;
+      font-size:1rem;
+      max-width:64ch;
+      color:rgba(255,255,255,.92);
+    }
+
+    .section-head{
+      display:flex; align-items:end; justify-content:space-between; gap:18px;
+      margin:8px 0 16px;
+    }
+    .section-head h2{font-size:clamp(1.55rem,2.2vw,2.1rem)}
+    .section-head p{margin:0; max-width:58ch; color:var(--muted)}
+    .article-list{display:grid; gap:18px}
+    .article-card{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr);
+      gap:18px;
+      align-items:center;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:14px;
+      box-shadow:var(--shadow);
+      transition:.18s ease;
+    }
+    .article-card:hover{
+      transform:translateY(-2px);
+      border-color:#d9c7fb;
+      box-shadow:0 20px 54px rgba(46,19,93,.12);
+    }
+    .thumb{
+      aspect-ratio:16/10;
+      min-height:132px;
+      border-radius:16px;
+      overflow:hidden;
+      background:#ece6f5;
+    }
+    .thumb img{width:100%; height:100%; object-fit:cover}
+    .meta-chip{
+      display:inline-block;
+      border-radius:999px;
+      padding:6px 10px;
+      background:#f1e9ff;
+      color:var(--brand);
+      border:1px solid #e0d1fd;
+      font-size:.84rem;
+      margin-bottom:10px;
+    }
+    .article-card h3{
+      font-size:clamp(1.18rem,2.2vw,1.6rem);
+      color:var(--ink);
+      margin-bottom:6px;
+    }
+    .article-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:1rem;
+      line-height:1.58;
+    }
+
+    .editorial-note{
+      margin:28px 0 10px;
+      background:linear-gradient(180deg,#fff,#faf7ff);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .editorial-note h2{
+      font-size:1.42rem;
+      margin-bottom:8px;
+    }
+    .editorial-note p{
+      margin:0; color:var(--muted);
+    }
+
+    .site-footer{
+      margin-top:34px;
+      border-top:1px solid var(--line);
+      padding:24px 0 46px;
+      color:var(--muted);
+    }
+    .footer-grid{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+    }
+    .footer-links{display:flex; flex-wrap:wrap; gap:12px}
+    .footer-link{font-size:.92rem; color:#41384d}
+
+    @media (max-width: 760px){
+      .nav-toggle{display:block}
+      .nav-menu{
+        display:none;
+        position:absolute; left:16px; right:16px; top:78px;
+        background:rgba(255,255,255,.98);
+        border:1px solid var(--line);
+        border-radius:22px;
+        padding:10px;
+        flex-direction:column; align-items:stretch;
+        box-shadow:0 22px 56px rgba(46,19,93,.14);
+      }
+      .nav-menu.open{display:flex}
+      .nav-link{padding:14px 16px}
+      .section-hero{
+        padding:22px 18px 18px;
+        border-radius:24px;
+      }
+      .section-hero h1{
+        font-size:1.72rem;
+        max-width:none;
+      }
+      .section-hero p{font-size:.95rem}
+      .section-head{display:block}
+      .article-card{
+        grid-template-columns:110px minmax(0,1fr);
+        gap:12px;
+        padding:10px;
+      }
+      .thumb{
+        min-height:76px;
+        border-radius:14px;
+      }
+      .article-card h3{
+        font-size:1.02rem;
+        margin-bottom:4px;
+      }
+      .article-card p{
+        font-size:.93rem;
+        line-height:1.44;
+      }
+    }
+  </style>
+
+  <title>Smart Home | SignalBytes</title>
+  <meta name="description" content="Clear guidance on choosing devices, building automations, and avoiding compatibility issues across ecosystems. The goal is a reliable home setup, not gadget clutter." />
+  <link rel="canonical" href="https://www.signalbytes.in/smart-home-automation.html" />
+  <meta property="og:title" content="Smart Home | SignalBytes" />
+  <meta property="og:description" content="Clear guidance on choosing devices, building automations, and avoiding compatibility issues across ecosystems. The goal is a reliable home setup, not gadget clutter." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.signalbytes.in/smart-home-automation.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1600&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>:root{--hero-image:url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1600&q=80');}</style>
 </head>
 <body>
 
-<div class="container">
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a href="index.html" class="brand" aria-label="SignalBytes home">
+        <div class="brand-mark">⚡</div>
+        <div class="brand-text">SignalBytes</div>
+      </a>
 
-<div class="section-hero">
-<div class="section-hero-inner">
-<h1>Smart home systems, simplified</h1>
-<p>Clear guidance on choosing devices, building automations, and avoiding compatibility issues.</p>
-</div>
-</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-<div class="article-list">
+      <nav class="nav-menu" id="navMenu">
+        <a class="nav-link " href="index.html">Home</a>
+        <a class="nav-link " href="ai-guide.html">AI Guide</a>
+        <a class="nav-link " href="creator-workflows.html">Creator Workflows</a>
+        <a class="nav-link active" href="smart-home-automation.html">Smart Home</a>
+        <a class="nav-link " href="cybersecurity-checklist.html">Cybersecurity</a>
+      </nav>
+    </div>
+  </header>
 
-<a href="#" class="article-card">
-<img src="https://source.unsplash.com/300x200/?ai,workspace">
-<h3>AI Tools for Drafting & Planning</h3>
-</a>
+  <main class="container">
+    <section class="section-hero" aria-label="Smart Home">
+      <div class="section-hero-inner">
+        <div class="eyebrow">Smart Home</div>
+        <h1>Smart home systems, simplified</h1>
+        <p>Clear guidance on choosing devices, building automations, and avoiding compatibility issues across ecosystems. The goal is a reliable home setup, not gadget clutter.</p>
+      </div>
+    </section>
 
-<a href="#" class="article-card">
-<img src="https://source.unsplash.com/300x200/?video,editing">
-<h3>Best AI Video Editing Tools</h3>
-</a>
+    <section>
+      <div class="section-head">
+        <h2>Featured guides</h2>
+        <p>Clean horizontal cards, smaller editorial headers, and the same header and footer shell used across the rest of SignalBytes.</p>
+      </div>
 
-<a href="#" class="article-card">
-<img src="https://source.unsplash.com/300x200/?coding,laptop">
-<h3>AI Coding & Prompting Guide</h3>
-</a>
+      <div class="article-list">
+        <a class="article-card" href="smart-home-ecosystems-2026.html">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=80" alt="Modern smart home living room with connected devices" loading="lazy">
+          </div>
+          <div>
+            <span class="meta-chip">Ecosystems</span>
+            <h3>Best Smart Home Ecosystems in 2026</h3>
+            <p>A practical comparison of Google Home, Alexa, Apple Home, and SmartThings for buyers who want fewer compatibility headaches.</p>
+          </div>
+        </a>
+<a class="article-card" href="best-smart-lighting-systems-2026.html">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Stylish smart lighting setup in a room" loading="lazy">
+          </div>
+          <div>
+            <span class="meta-chip">Lighting</span>
+            <h3>Best Smart Lighting Systems for Modern Homes</h3>
+            <p>How to choose between starter bulbs, ambient lighting, scenes, and multi-room setups without overbuying.</p>
+          </div>
+        </a>
+<a class="article-card" href="best-smart-home-security-devices-2026.html">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1557318041-1ce374d55ebf?auto=format&fit=crop&w=900&q=80" alt="Home security camera monitoring doorway" loading="lazy">
+          </div>
+          <div>
+            <span class="meta-chip">Security</span>
+            <h3>Best Smart Home Security Devices</h3>
+            <p>Doorbells, cameras, locks, and alerting systems that improve safety without creating constant noise or privacy confusion.</p>
+          </div>
+        </a>
+<a class="article-card" href="smart-home-beginners-guide-2026.html">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Connected home devices and automation controls" loading="lazy">
+          </div>
+          <div>
+            <span class="meta-chip">Beginner Guide</span>
+            <h3>How to Build Your First Smart Home Properly</h3>
+            <p>Start with ecosystems, radios, sensors, and routines so the home behaves reliably instead of becoming a pile of disconnected gadgets.</p>
+          </div>
+        </a>
+      </div>
+    </section>
 
-</div>
+    <section class="editorial-note">
+      <h2>Editorial note</h2>
+      <p>This rebuild turns Smart Home into a proper editorial hub with the same header, footer, and responsive card treatment as the stronger sections.</p>
+    </section>
+  </main>
 
-</div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© 2026 SignalBytes. Independent technology publishing.</div>
+      <div class="footer-links">
+        <a class="footer-link" href="about.html">About SignalBytes</a>
+        <a class="footer-link" href="contact.html">Contact</a>
+        <a class="footer-link" href="privacy.html">Privacy Policy</a>
+        <a class="footer-link" href="terms.html">Terms of Use</a>
+      </div>
+      <div>Editorial contact: technodate3@gmail.com</div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+  </script>
 
 </body>
 </html>
