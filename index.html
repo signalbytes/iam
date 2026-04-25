@@ -141,14 +141,6 @@
   .pill-btn:hover { background: var(--ink); color: #fff; }
   .pill-btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
   .pill-btn.solid:hover { background: #5b21b6; border-color: #5b21b6; }
-  .icon-btn {
-    width: 32px; height: 32px; border-radius: 50%;
-    border: 1px solid var(--rule-soft);
-    display: inline-flex; align-items: center; justify-content: center;
-    cursor: pointer;
-    background: #fff;
-  }
-  .icon-btn:hover { border-color: var(--ink); }
 
   /* ───────────── main container ───────────── */
   main { max-width: 1320px; margin: 0 auto; padding: 0 32px 96px; }
@@ -227,18 +219,7 @@
     text-wrap: pretty;
   }
 
-  .byline {
-    display: flex; align-items: center; gap: 14px;
-    font-family: var(--condensed);
-    font-size: 12.5px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-2);
-    margin-bottom: 26px;
-  }
-  .byline .author { color: var(--ink); font-weight: 700; }
-  .byline .sep { width: 4px; height: 4px; background: var(--ink-3); border-radius: 50%; }
-
+  /* ───── cover image ───── */
   .cover-stage {
     position: relative;
     aspect-ratio: 16 / 9;
@@ -257,17 +238,9 @@
   }
   .cover-stage .scrim {
     position: absolute; inset: 0;
-    background:
-      linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.55) 78%, rgba(0,0,0,0.85) 100%);
-  }
-  .cover-stage .frame-no {
-    position: absolute; top: 18px; right: 22px;
-    font-family: var(--condensed);
-    font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(255,255,255,.85);
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.55) 78%, rgba(0,0,0,0.85) 100%);
   }
 
-  /* headline overlay panel sitting on the image */
   .cover-overlay {
     position: absolute;
     left: 32px; right: 32px; bottom: 0;
@@ -285,21 +258,6 @@
     border-top: 4px solid var(--accent);
     backdrop-filter: blur(6px);
   }
-  .cover-overlay .headline-block .cover-title {
-    margin: 6px 0 8px;
-    font-size: clamp(34px, 3.6vw, 52px);
-  }
-
-  .cover-overlay .meta-block .pull {
-    font-family: var(--serif-display);
-    font-style: italic;
-    font-size: clamp(18px, 1.5vw, 22px);
-    line-height: 1.35;
-    color: #fff;
-    border-left: 2px solid var(--accent);
-    padding-left: 14px;
-    margin-bottom: 14px;
-  }
 
   /* ───────────── fast intel sidebar ───────────── */
   .intel-title {
@@ -310,6 +268,7 @@
     font-size: 14px;
     border-bottom: 2px solid var(--ink);
     padding-bottom: 10px;
+    margin-bottom: 10px;
   }
   .intel-item {
     display: grid;
@@ -331,9 +290,20 @@
     line-height: 1.25;
     margin: 0;
   }
+  .intel-head a:hover { color: var(--accent); }
 
-  /* ───────────── grid 6 cards ───────────── */
+  /* ───────────── grid section ───────────── */
   .grid-section { padding-top: 56px; }
+  .section-head {
+    border-top: 2px solid var(--ink);
+    padding: 10px 0;
+    margin-bottom: 28px;
+    font-family: var(--condensed);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 14px;
+  }
   .card-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0,1fr));
@@ -345,32 +315,35 @@
     border-bottom: 1px solid var(--rule-soft);
     padding: 26px 28px 30px;
     background: #fff;
+    transition: 160ms ease;
   }
-  .card-title {
-    font-family: var(--serif-display);
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.18;
-    margin-top: 10px;
-  }
+  .card:hover { background: var(--paper); }
   .card-tag {
     font-family: var(--condensed);
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--accent);
     border: 1px solid var(--accent);
-    padding: 4px 9px;
+    padding: 3px 8px;
+    margin-bottom: 12px;
+    display: inline-block;
   }
-
-  /* featured card */
-  .card.featured {
-    grid-column: span 2;
-    background: var(--ink);
-    color: #fff;
+  .card-title {
+    font-family: var(--serif-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0 0 12px;
   }
-  .card.featured .card-title { font-size: 44px; color: #fff; }
+  .card-title a:hover { color: var(--accent); }
+  .card-dek {
+    font-family: var(--serif-body);
+    font-size: 15px;
+    color: var(--ink-2);
+    margin: 0;
+  }
 
   /* ───────────── footer ───────────── */
   .footband {
@@ -380,13 +353,6 @@
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr 1fr;
     gap: 28px;
-  }
-  .footband h4 {
-    font-family: var(--condensed);
-    font-size: 12.5px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
   }
   .colophon {
     border-top: 1px solid var(--rule-soft);
@@ -426,7 +392,6 @@
     <nav class="left">
       <a href="index.html" class="active">Home</a>
       <a href="ai-guide.html">AI Guide</a>
-      <a href="creator-workflows.html">Creator Workflows</a>
     </nav>
     <a href="index.html" class="wordmark">
       <span class="glyph">◆</span>SignalBytes
@@ -443,9 +408,9 @@
       <div class="cover-topline">
         <div class="cover-eyebrow">
           <span class="tag">Cover Story</span>
-          <span class="issue">The Workflow Issue</span>
+          <span class="issue">Vol. 04 · Issue 042</span>
         </div>
-        <span class="badge-hr">✓ Human Reviewed</span>
+        <span class="badge-hr"><span class="check">✓</span> Human Reviewed</span>
       </div>
 
       <figure class="cover-stage">
@@ -454,73 +419,71 @@
         <div class="cover-overlay">
           <div class="headline-block">
             <h1 class="cover-title">The Perfect <em>Paragraph</em> Prompt</h1>
-            <a href="perfect-paragraph-ai-prompt.html" style="color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em;">Read Longform →</a>
-          </div>
-          <div class="meta-block">
-            <p class="pull">“Stop writing checklists. Write a paragraph that tells the model who it is.”</p>
+            <a href="best-ai-coding-prompting-guide-2026.html" style="color:var(--accent); font-weight:700; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;">Read Your Guide →</a>
           </div>
         </div>
       </figure>
 
-      <p class="cover-deck">Six months of A/B logs and 14,200 prompts. The result is a structure that beats every viral template we tested.</p>
+      <p class="cover-deck" style="margin-top:22px;">Integrating AI into your workflow doesn't have to be complex. Start with a structure that actually yields results across every major model.</p>
     </article>
 
     <div class="divider"></div>
 
     <aside class="intel">
       <div class="intel-title">Fast Intel</div>
+      
       <div class="intel-item">
         <div class="intel-num">01</div>
-        <h4 class="intel-head"><a href="#">Claude Opus 4.5 Ships with 2M-Token Window</a></h4>
+        <h4 class="intel-head"><a href="best-ai-video-editing-tools-2026.html">The Best AI Video Editing Tools for 2026</a></h4>
       </div>
+
       <div class="intel-item">
         <div class="intel-num">02</div>
-        <h4 class="intel-head"><a href="#">DaVinci Resolve 20 Buries the Timeline</a></h4>
+        <h4 class="intel-head"><a href="best-ai-image-editing-tools-2026.html">Top AI Image Editors: A Comparison</a></h4>
       </div>
+
       <div class="intel-item">
         <div class="intel-num">03</div>
-        <h4 class="intel-head"><a href="#">Sponsor Rates Rebound 18% for Creators</a></h4>
+        <h4 class="intel-head"><a href="best-ai-writing-assistants-2026.html">Do AI Writing Assistants Actually Help?</a></h4>
       </div>
     </aside>
   </section>
 
   <section class="grid-section">
+    <div class="section-head">The Collection</div>
     <div class="card-grid">
-      <article class="card featured">
-        <span class="card-tag">AI Guide</span>
-        <h2 class="card-title">The Perfect Paragraph Prompt</h2>
-        <p>A field-tested structure for prompts that survive contact with reality.</p>
+      
+      <article class="card">
+        <span class="card-tag">Smart Home</span>
+        <h2 class="card-title"><a href="best-smart-home-security-devices-2026.html">Secure Your Home with AI in 2026</a></h2>
+        <p class="card-dek">A field test of the latest sensors and cameras for the modern connected home.</p>
       </article>
 
       <article class="card">
-        <span class="card-tag">Tools</span>
-        <h2 class="card-title">CapCut vs. Filmora 2026</h2>
+        <span class="card-tag">Productivity</span>
+        <h2 class="card-title"><a href="best-ai-office-productivity-tools-2026.html">Office AI: What’s Worth Your Time?</a></h2>
+        <p class="card-dek">Stop wasting hours on formatting. These tools automate the grunt work.</p>
       </article>
 
       <article class="card">
-        <span class="card-tag">Hardware</span>
-        <h2 class="card-title">The $480 Lens Lab Test</h2>
+        <span class="card-tag">Smart Home</span>
+        <h2 class="card-title"><a href="best-smart-lighting-systems-2026.html">Automated Lighting Guide</a></h2>
+        <p class="card-dek">The best systems for circadian rhythm and energy efficiency.</p>
       </article>
+
     </div>
   </section>
 
   <footer class="footband">
     <div>
       <h4>SignalBytes</h4>
-      <p>Editorial intelligence for the creator economy.</p>
-    </div>
-    <div>
-      <h4>Sections</h4>
-      <ul>
-        <li><a href="ai-guide.html">AI Guide</a></li>
-        <li><a href="creator-workflows.html">Creator Workflows</a></li>
-      </ul>
+      <p>Editorial intelligence for creators.</p>
     </div>
     <div>
       <h4>Legal</h4>
       <ul>
         <li><a href="about.html">About</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
